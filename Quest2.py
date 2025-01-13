@@ -22,13 +22,12 @@ with open("input2B.txt", "r") as f:
             Runes[i] = Runes[i].replace(".", "\\.")
         Runes.append(Runes[i][::-1])
     f.readline()
-    Shield = f.readline()
-    total = 0
+    Shield = list(map(lambda x: x.replace("\n", ""), f.readlines()))
     for rune in Runes:
         for line in range(len(Shield)):
-            Shield[line]
-
-    print(total)
+            Shield[line] = re.sub(f'{rune}', f"{rune[:-1]}#{rune[-1]}", Shield[line])
+    line = ''.join(Shield)
+    print(len(re.findall(r'#', line)))
 
 
 
