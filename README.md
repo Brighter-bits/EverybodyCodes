@@ -27,3 +27,11 @@ There, caught up.
 
 What is this?????????
 
+The most annoying part is when the dancer wraps around to the other column, but then if the last column wraps around to the start, everything breaks...
+
+I swear this is impossible, every single time one of the columns just empties, how did I even do part one.
+
+........................ Okay. So, when the clapper goes to the next column, they don't switch to the next one once they get to the end.
+The clapper just circles the exact same column multiple times until they are assimilated into the hivemind.
+
+I am very annoyed.

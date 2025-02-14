@@ -3,25 +3,18 @@ Parts = ["everybody_codes_e2024_q05_p1.txt", "everybody_codes_e2024_q05_p2.txt",
 def Dance(lines, round):
     Target = lines[round%4][0]
     del(lines[round%4][0])
-    TargetStore = Target
-    switch = False
-    for j in range(1, 5):
-        if Target <= len(lines[(round+j)%4]):
-            if j % 2 == 0:
-                if switch:
-                    lines[(round+j)%4].insert(Target-1, TargetStore)
-                else:
-                    lines[(round+j)%4].insert(len(lines[(round+j)%4])-Target+1, TargetStore)
-            else:
-                if switch:
-                    lines[(round+j)%4].insert(len(lines[(round+j)%4])-Target+1, TargetStore)
-                else:
-                    lines[(round+j)%4].insert(Target-1, TargetStore)
-            break
+    Turns = Target//len(lines[(round+1)%4])
+    Place = Target%(len(lines[(round+1)%4]))
+    if Turns % 2 == 0:
+        if Place == 0:
+            lines[(round+1)%4].insert(1, Target)
         else:
-            Target -= len(lines[(round+j)%4])
-            if (round+j)%4 == 0:
-                switch = True
+            lines[(round+1)%4].insert(Place-1, Target)
+    else:
+        if Place == 0:
+            lines[(round+1)%4].insert(len(lines[(round+1)%4])-1, Target)
+        else:
+            lines[(round+1)%4].insert(len(lines[(round+1)%4])-Place+1, Target)
     return lines
 
 def Shout(lines):
@@ -44,7 +37,7 @@ def P1():
         Shout(lines)
 
 def P2():
-    with open("T.txt", "r") as f:
+    with open(Parts[1], "r") as f:
         lines = list(map(lambda x: list(map(int, x.replace("\n", "").split(" "))), f.readlines()))
         lines = [list(tup) for tup in zip(*lines)]
         from collections import Counter
