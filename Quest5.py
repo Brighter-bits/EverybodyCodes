@@ -54,6 +54,19 @@ def P2():
         print(int(Shout(lines)) * round)
 
         
-
-P2()
+def P3():
+    with open("Q53.txt", "r") as f:
+        lines = list(map(lambda x: list(map(int, x.replace("\n", "").split(" "))), f.readlines()))
+        lines = [list(tup) for tup in zip(*lines)]
+        round = 0
+        from collections import Counter
+        ShoutCounter = Counter()
+        ShoutCounter["null"] = 1
+        round = 0
+        while ShoutCounter.most_common(1)[0][1] != 10:
+            lines = Dance(lines, round)
+            ShoutCounter[Shout(lines)] += 1
+            round += 1
+        print(max(ShoutCounter.keys()))
         
+P3()

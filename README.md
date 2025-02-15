@@ -35,3 +35,6 @@ I swear this is impossible, every single time one of the columns just empties, h
 The clapper just circles the exact same column multiple times until they are assimilated into the hivemind.
 
 I am very annoyed.
+
+Okay, part 3... There's almost certainly a mathematical pattern, where it all begins to repeat. However, checking if it's repeating will probably cause a memory error. So instead, we'll just go on for a long
+time and then use the largest one, and hope it's right
