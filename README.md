@@ -38,3 +38,13 @@ I am very annoyed.
 
 Okay, part 3... There's almost certainly a mathematical pattern, where it all begins to repeat. However, checking if it's repeating will probably cause a memory error. So instead, we'll just go on for a long
 time and then use the largest one, and hope it's right
+
+# Day 6
+
+DIJKSTRA!!!!
+
+Okay, maybe it's a bit overkill for Dijkstra. However, it's always good to practice. However, the algorithm can't differentiate between each different apple, so I've each a unique AppleID!
+
+Okay, while implementing dijkstra may have taken some time, it obliterated parts 2 and 3, so I think it was worth it.
+
+Cleaned up the code a bit so that I don't have to manually look at the length of each branch.
