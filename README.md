@@ -48,3 +48,27 @@ Okay, maybe it's a bit overkill for Dijkstra. However, it's always good to pract
 Okay, while implementing dijkstra may have taken some time, it obliterated parts 2 and 3, so I think it was worth it.
 
 Cleaned up the code a bit so that I don't have to manually look at the length of each branch.
+
+# Day 7
+
+It doesn't look like Dijkstra... yet.
+
+First bit was fine, the dictionary may not have been necessary though. 
+
+Part 2 looks more complicated, but it's just applying a mask over another list.
+
+
+I completely forgot that powers can't go negative, I have wasted hours on trying to find the error...
+But I did see some other person's code which had some really funky cool stuff, that I actually kind of understand now (didn't help my solution though).
+
+Pre-emptive celebration, that did not change my output.....
+
+It's too late at night, I'm calling in the AId.
+
+The AId is being useless, again... AI truly is the future.
+
+I believe I now know, still need to implement it however. Every time I completed a lap, I went back to the start of the plan, what I probably should have done, is gone to the next part instead.
+
+Brute force 4ever!!!!!!
+
+I can't read. I've brute forced twice, 26 hours in total. Just to realise it's only those which contain 5 "+"s, 3 "-"s and 3 "="s
