@@ -72,3 +72,12 @@ I believe I now know, still need to implement it however. Every time I completed
 Brute force 4ever!!!!!!
 
 I can't read. I've brute forced twice, 26 hours in total. Just to realise it's only those which contain 5 "+"s, 3 "-"s and 3 "="s
+
+# Day 8
+
+Looks fine, all I need is jsut a bit of maths, second part looks harder though.
+
+Okay, in my opinion EveryBody Codes has some really confusing wording sometimes. For this one, I thought
+that the extra blocks on the side couldn't be higher than the layer. I WAS WRONG. It's far easier!
+
+I spent 2 hours of "Volunteering" on this...
