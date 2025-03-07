@@ -47,8 +47,13 @@ def P3():
         while blocks > 0:
             thickness.append(((thickness[-1] * priests) % acolytes) + acolytes)
             blocks -= ((thickness[-1])*3) + layermult(thickness)
-        print(thickness)
-        for height in thickness:
-            
+        heights = []
+        heights.append(sum(thickness))
+        for i in range(1, len(thickness)):
+            heights.append(sum(thickness[i:]))
+        del heights[-1]
+        spaces = list(map(lambda x: (x*priests*(1+(2*(len(thickness)-1)))%acolytes), heights))
+        blocks += spaces[0] + 2*(sum(spaces[1:]))
+        print(blocks)
 
 P3()
