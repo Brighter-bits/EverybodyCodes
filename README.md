@@ -81,3 +81,10 @@ Okay, in my opinion EveryBody Codes has some really confusing wording sometimes.
 that the extra blocks on the side couldn't be higher than the layer. I WAS WRONG. It's far easier!
 
 I spent 2 hours of "Volunteering" on this...
+
+# Day 9
+
+This one seems easy enough, all you need to do is subtract and subtract until you get the answer. I bet that eventually I'm going to run into the problem where just going down the list won't find me the
+smallest combination.
+
+Called it. No clue what to do though... prime factors or factor trees perhaps?
