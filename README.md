@@ -88,3 +88,10 @@ This one seems easy enough, all you need to do is subtract and subtract until yo
 smallest combination.
 
 Called it. No clue what to do though... prime factors or factor trees perhaps?
+
+Turns out this is called the coin change problem, and has a very specific solution.
+
+For the third part, the possibilities ranged between the target halved - 50 and the target halved + 50. And each possibility has only one specific pair which can be used to create the target.
+So in reality there's only around 100 possibilities per number
+
+I did begin running into errors on part 3, but that was an off by one error when rounding odd numbers/2.
