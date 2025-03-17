@@ -95,3 +95,5 @@ For the third part, the possibilities ranged between the target halved - 50 and 
 So in reality there's only around 100 possibilities per number
 
 I did begin running into errors on part 3, but that was an off by one error when rounding odd numbers/2.
+
+# Day 10
