@@ -43,7 +43,7 @@ time and then use the largest one, and hope it's right
 
 DIJKSTRA!!!!
 
-Okay, maybe it's a bit overkill for Dijkstra. However, it's always good to practice. However, the algorithm can't differentiate between each different apple, so I've each a unique AppleID!
+Okay, maybe it's a bit overkill for Dijkstra. However, it's always good to practice. However, the algorithm can't differentiate between each different apple, so I've given each a unique AppleID!
 
 Okay, while implementing dijkstra may have taken some time, it obliterated parts 2 and 3, so I think it was worth it.
 
@@ -97,3 +97,7 @@ So in reality there's only around 100 possibilities per number
 I did begin running into errors on part 3, but that was an off by one error when rounding odd numbers/2.
 
 # Day 10
+
+Today is quite simple, it's just picross really, but with words.
+
+Okay, this is a bit harder. After a lot of careful reading- Just kidding, I haven't learnt my lesson and am still not reading the questions properly, I misunderstood the 
