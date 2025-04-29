@@ -101,6 +101,7 @@ I did begin running into errors on part 3, but that was an off by one error when
 Today is quite simple, it's just picross really, but with words.
 
 Okay, this is a bit harder. After a lot of careful reading- Just kidding, I haven't learnt my lesson and am still not reading the questions properly, I misunderstood the question.
+I thought that a letter in the first grid could be taken from a letter twelve grids away on the same row (no, each grid is it's own independant thing)
 
 One slight problem with this grid, is that if I solve a certain letter, that could have been used to make the previous grid possible to solve, I would have to go back. So I may have to do something similar to
 bubble sort, where I keep track of whether I've made any new changes, and if not, I have my final answer.
@@ -108,3 +109,11 @@ bubble sort, where I keep track of whether I've made any new changes, and if not
 Instead, I decided to just do it 1000 times. While my solution isn't very good, it works. At one point I did struggle with a slight problem of having two question marks on the same row/column.
 As such, I have to abandon solving the grid, as I don't know which letter to place in which spot. As it could be either one. Later however, once more question marks are solved I can just go back and hopefully
 my kerfuffle will be solved.
+
+# Day 11
+
+I don't know why I'm calling them days, I'm doing this over the course of months whenever I feel like it.
+
+This quest however was nice and simple. All you need to use is Collection Counter, then adding the new generation multipled by the old generation.
+
+Nice and simple, part three all you have to do is note down the different types of termites, loop through them all and do max–min.
