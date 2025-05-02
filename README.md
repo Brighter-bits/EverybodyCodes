@@ -117,3 +117,17 @@ I don't know why I'm calling them days, I'm doing this over the course of months
 This quest however was nice and simple. All you need to use is Collection Counter, then adding the new generation multipled by the old generation.
 
 Nice and simple, part three all you have to do is note down the different types of termites, loop through them all and do max–min.
+
+# Day 12
+
+.... This seems incredibly difficult. So, since this is coordinates I will be using imaginary numbers as they're less work than touples.
+I can calculate where the projectile will start falling, because the targets are not close enough to the catapults to be hit while going up or across.
+
+The calculation is just the power up and twice the power across. Nice and easy. I can then put every single coordinate into a dictionary.
+Each coordinate corresponds to the ranking score of the projectile that would destroy it.
+
+Then I find the coordinates of the targets, put it in, and bam, I get all my values.
+
+Part 2 is simple enough, I just have to check for H and append the coordinate twice. I encountered a little error because the program found all the Ts then tried to start searching for Hs at the end of the row.
+
+Part 3... NOW THE UPWARD AND SIDEWAYS values are necessary?! AND THERE'S A TIME COMPONENT??????? =( I'm going to spend far too long on this part.
