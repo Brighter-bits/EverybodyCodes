@@ -176,3 +176,4 @@ cython_debug/
 # No clue what all ^^^^^^ is
 *.txt
 Dump.py
+.vscode/

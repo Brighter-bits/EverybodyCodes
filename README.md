@@ -131,3 +131,15 @@ Then I find the coordinates of the targets, put it in, and bam, I get all my val
 Part 2 is simple enough, I just have to check for H and append the coordinate twice. I encountered a little error because the program found all the Ts then tried to start searching for Hs at the end of the row.
 
 Part 3... NOW THE UPWARD AND SIDEWAYS values are necessary?! AND THERE'S A TIME COMPONENT??????? =( I'm going to spend far too long on this part.
+
+I've done some thinking on this. I can give each meteor a list of all of its positions, alongside the time they will be there.
+We can make our usual list of coordinates, but add a time component.
+But since the projectiles can be launched at any time and with multiple at a time, we can compare the time component of the meteor's time component and the projectiles' time component.
+If the time component of the projectile is less than that of the meteor, we can get all the projectiles that will work, we then choose the smallest out of all of these.
+
+Had a problem where I was going backwards while descending. This is highly inefficient, my laptop is burning up. BUT IT IS WORKING!
+
+# Day 19
+
+They're not actual days. Okay, so today, the 2025 Quest and the first story were put onto the website. In my excitement, I clicked onto the story and then wondered why Sir Enigmaticus Enscriptus was in bold. I
+clicked it and started Quest 19...
