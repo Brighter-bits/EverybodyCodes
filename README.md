@@ -143,3 +143,14 @@ Had a problem where I was going backwards while descending. This is highly ineff
 
 They're not actual days. Okay, so today, the 2025 Quest and the first story were put onto the website. In my excitement, I clicked onto the story and then wondered why Sir Enigmaticus Enscriptus was in bold. I
 clicked it and started Quest 19...
+
+FOR THE LOVE OF EVERYTHING, LEARN TO READ!!!!! "From the beginning of the message key sequence".
+
+Next part can't be brute force, however, since we go from the beginning of the message key sequence, each pass will be exactly the same.
+E.g, the character in spot [4][4] will always be moved to spot [5][6]. If I can find the exact transformation, I can just apply it over and over, which is maybe faster?
+It is faster, if I also compute where the character will go after 4000 passes, I can optimise it further.
+Then again, it's only "optimised", the thing still takes over 10 minutes to run, but I'm happy with it.
+
+# Day 13
+
+Back to normal... Dijkstra again?!
