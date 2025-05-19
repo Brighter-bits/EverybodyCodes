@@ -154,3 +154,10 @@ Then again, it's only "optimised", the thing still takes over 10 minutes to run,
 # Day 13
 
 Back to normal... Dijkstra again?!
+Phew, 5 days and I've finally implemented my first A* algorithm... and now I'm getting recursion errors for my other function.
+My current implementation uses recursion in order to essentially flood fill the entire grid, adding the time it takes for each step-
+
+Nevermind, I can just say goodbye to safety and increase the recursion depth. What could go wrong?
+Nothing apparently, it works perfectly fine now.
+
+Okay, I've put the algorithm into a function with a start and end variable, then got all the possible start variables. I then spent an hour because I kept calculating the max time instead of the min.
