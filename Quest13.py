@@ -81,8 +81,8 @@ def FloodFind(grid:list, Node:complex):
 
 
 
-def Solve(part=3):
-    with open(Parts[2], "r") as f:
+def Solve(part):
+    with open(Parts[part-1], "r") as f:
         inp = list(map(lambda x: list(x.replace("\n", "")), f.readlines()))
         for line in range(len(inp)):
             for char in range(len(inp[0])):
@@ -136,5 +136,5 @@ def Search(Start, End, HeurDict):
                 heapq.heappush(queue, (Heur, NDistance, (adjacent.real, adjacent.imag)))
     return StartToFinish
 
-
-print(Solve())
+for i in range(1, 4):
+    print(Solve(i))

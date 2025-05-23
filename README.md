@@ -19,7 +19,7 @@ Really like this puzzle actually, it forced me to do some interesting stuff with
 
 # Day 4
 
-Easy. So easy, did it in under 10 mins. And even then, the I mistyped the input and so had to wait a minute to put in the correct answer.
+Easy. So easy, did it in under 10 mins. And even then, I mistyped the input and so had to wait a minute to put in the correct answer.
 
 There, caught up.
 
@@ -161,3 +161,25 @@ Nevermind, I can just say goodbye to safety and increase the recursion depth. Wh
 Nothing apparently, it works perfectly fine now.
 
 Okay, I've put the algorithm into a function with a start and end variable, then got all the possible start variables. I then spent an hour because I kept calculating the max time instead of the min.
+
+# Day 14
+
+Oh, this looks horrible. I'm going to need to create a Tensor class which can hold all of the information... and also expand dynamically.
+I'm not too sure how to do this, but I'm going to spend some time on it.
+
+This is ballooning out of control, I think I'll need to use a different method.
+Since I only need the height, I'll only count the up and down commands as the rest are irrelevant.
+
+Okay, part 1 complete, but part two looks like it will need a Tensor.
+
+Spent more hours on that, don't use a Tensor, it is FAR too much work.
+Instead, I'll have a dictionary which holds all of the points I have visited, if I get a new point, nothing will happen as it is already set to True.
+I will then count how many items I have in the dictionary.
+
+The next one is harder, I have paths, and I need to find the shortest distances......... A* again? Really? I just did that in the last quest...
+
+Fine. I will check every single item in the dictionary and then check if the adjacent segments are in the dictionary, if they are, we set up a link between them.
+
+# Day 15
+
+Dijkstra again? This feels repetetive at this point
