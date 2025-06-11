@@ -75,7 +75,7 @@ I can't read. I've brute forced twice, 26 hours in total. Just to realise it's o
 
 # Day 8
 
-Looks fine, all I need is jsut a bit of maths, second part looks harder though.
+Looks fine, all I need is justt a bit of maths, second part looks harder though.
 
 Okay, in my opinion EveryBody Codes has some really confusing wording sometimes. For this one, I thought
 that the extra blocks on the side couldn't be higher than the layer. I WAS WRONG. It's far easier!
@@ -182,4 +182,15 @@ Fine. I will check every single item in the dictionary and then check if the adj
 
 # Day 15
 
-Dijkstra again? This feels repetetive at this point
+Dijkstra again? This feels repetetive at this point.
+
+Nevermind, I've been trying this for quite a while, maybe a double dijkstra?
+Brute force methods are not working so well.
+I've called in the AId and am now learning a dynamic programming method, similar to Day 9.
+
+Unfortunately, the method is really, really, really slow. However, I can use Dijkstra to find the shortest length between every single herb, the other herbs, and the start.
+This creates a sort of compressed graph without all the moving one space nonsense.
+
+Nevermind, DP is terrible, I'm using brute force.
+
+I can simplify the graph, by instead of having each individual square be a node, I have each herb being a node. This is taking far too long.
