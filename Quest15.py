@@ -71,14 +71,15 @@ def Solve(part):
             from itertools import permutations
             DistanceHerbs = dict()
             possibilities = permutations(range((len(Herbs)+1)))
+            Herbs["Start"] = [Start]
+            result = []
             for possible in possibilities:
                 SwirlDict = LTD(possible)
-                Herbs["Start"] = [Start]
                 for herb in Herbs.values():
                     for place in herb:
                         DistanceHerbs[place] = Dijk(place)
-                result = Solve22((Start, 0))
-                print(result)
+                result.append(Solve22((Start, 0), possible))
+                print(min(result))
 
 def LTD(L):
     D = dict()
@@ -105,12 +106,12 @@ def Solve1(Start:complex, Herbs):
         Paths.append(Distances[herb])
     print(min(Paths)*2)
 
-
-def Solve22(CNode):
+@cache
+def Solve22(CNode, possible):
     if Start != DistanceHerbs[CNode[0]][0][0]:
         routes = []
         for herb in DistanceHerbs[CNode[0]]:
-            routes.append(CNode[1] + Solve22(herb))
+            routes.append(CNode[1] + Solve22(herb, possible))
         return min(routes)
     else:
         return CNode[1] + DistanceHerbs[CNode[0]][0][1]
