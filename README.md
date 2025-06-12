@@ -194,3 +194,5 @@ This creates a sort of compressed graph without all the moving one space nonsens
 Nevermind, DP is terrible, I'm using brute force.
 
 I can simplify the graph, by instead of having each individual square be a node, I have each herb being a node. This is taking far too long.
+
+So, since the input is technically just the previous input but x3. So if I just find the shortest path around them all, making sure the middle one connects to the other two, I should be fine?
