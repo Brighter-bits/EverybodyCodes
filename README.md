@@ -196,3 +196,6 @@ Nevermind, DP is terrible, I'm using brute force.
 I can simplify the graph, by instead of having each individual square be a node, I have each herb being a node. This is taking far too long.
 
 So, since the input is technically just the previous input but x3. So if I just find the shortest path around them all, making sure the middle one connects to the other two, I should be fine?
+The only place the middle point connect to the other two is at the two "K"s. So I find the shortest path to get from the start, to all the herbs in the middle, as well as the "E" and the "R" which are next to
+the "K"s.
+

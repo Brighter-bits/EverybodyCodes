@@ -69,11 +69,11 @@ def Solve(part):
             Solve1(Start, Herbs)
         elif part == 2 or part == 3:
             from itertools import permutations
-            DistanceHerbs = dict()
             possibilities = permutations(range((len(Herbs)+1)))
             Herbs["Start"] = [Start]
             result = []
             for possible in possibilities:
+                DistanceHerbs = dict()
                 SwirlDict = LTD(possible)
                 for herb in Herbs.values():
                     for place in herb:
