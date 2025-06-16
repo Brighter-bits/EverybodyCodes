@@ -20,10 +20,19 @@ def GraphBuilder(grid: list, part):
     elif part == 2 or part == 3:
         Herbs = dict()
         Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
-                if grid[i][j] not in Herbs and grid[i][j] in Alphabet:
-                    Herbs[grid[i][j]] = []
+        if part == 3:
+            limits = [0, int(len(grid[0])/3), int((2*len(grid[0]))/3), len(grid[0])]
+            for limit in range(3):
+                for i in range(len(grid)):
+                    for j in range(limits[limit], limits[limit+1]):
+                        if grid[i][j] not in Herbs and grid[i][j] in Alphabet:
+                            Herbs[grid[i][j]] = []
+        else:
+            for i in range(len(grid)):
+                for j in range(len(grid[0])):
+                    if grid[i][j] not in Herbs and grid[i][j] in Alphabet:
+                        Herbs[grid[i][j]] = []
+
         for herb in Herbs.keys():
             for i in range(len(grid)):
                 for j in range(len(grid[0])):
@@ -69,17 +78,28 @@ def Solve(part):
             Solve1(Start, Herbs)
         elif part == 2 or part == 3:
             from itertools import permutations
-            possibilities = permutations(range((len(Herbs)+1)))
+            Lpossibilities = permutations(range(5))
+            Mpossibilities = permutations(list(range(4, 10)) + [list(Herbs.keys()).index("R"), len(Herbs)])
+            Rpossibilities = permutations(range(10, len(Herbs)))
             Herbs["Start"] = [Start]
             result = []
-            for possible in possibilities:
-                DistanceHerbs = dict()
-                SwirlDict = LTD(possible)
-                for herb in Herbs.values():
-                    for place in herb:
-                        DistanceHerbs[place] = Dijk(place)
-                result.append(Solve22((Start, 0), possible))
-                print(min(result))
+            for i in Lpossibilities:
+                for j in i:
+                    print(list(Herbs.keys())[j])
+            for i in Mpossibilities:
+                for j in i:
+                    print(list(Herbs.keys())[j])
+            for i in Rpossibilities:
+                for j in i:
+                    print(list(Herbs.keys())[j])
+            
+            DistanceHerbs = dict()
+            SwirlDict = LTD(possible)
+            for herb in Herbs.values():
+                for place in herb:
+                    DistanceHerbs[place] = Dijk(place)
+            result.append(Solve22((Start, 0), possible))
+            print(min(result))
 
 def LTD(L):
     D = dict()

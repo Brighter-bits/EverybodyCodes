@@ -199,3 +199,5 @@ So, since the input is technically just the previous input but x3. So if I just 
 The only place the middle point connect to the other two is at the two "K"s. So I find the shortest path to get from the start, to all the herbs in the middle, as well as the "E" and the "R" which are next to
 the "K"s.
 
+My previous code was not ready for this, however, just adding an extra loop allows me to have the dict values in alphabetical order, that means
+in the dict's index: 0 = "A", 1 = "B", 2 = "C", etc; instead of being a random jumble (which while being the same each time, is a pain to work with).
