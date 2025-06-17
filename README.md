@@ -75,7 +75,7 @@ I can't read. I've brute forced twice, 26 hours in total. Just to realise it's o
 
 # Day 8
 
-Looks fine, all I need is justt a bit of maths, second part looks harder though.
+Looks fine, all I need is just a bit of maths, second part looks harder though.
 
 Okay, in my opinion EveryBody Codes has some really confusing wording sometimes. For this one, I thought
 that the extra blocks on the side couldn't be higher than the layer. I WAS WRONG. It's far easier!
@@ -101,7 +101,7 @@ I did begin running into errors on part 3, but that was an off by one error when
 Today is quite simple, it's just picross really, but with words.
 
 Okay, this is a bit harder. After a lot of careful reading- Just kidding, I haven't learnt my lesson and am still not reading the questions properly, I misunderstood the question.
-I thought that a letter in the first grid could be taken from a letter twelve grids away on the same row (no, each grid is it's own independant thing)
+I thought that a letter in the first grid could be taken from a letter twelve grids away on the same row (no, each grid is it's own independent thing)
 
 One slight problem with this grid, is that if I solve a certain letter, that could have been used to make the previous grid possible to solve, I would have to go back. So I may have to do something similar to
 bubble sort, where I keep track of whether I've made any new changes, and if not, I have my final answer.
@@ -114,13 +114,13 @@ my kerfuffle will be solved.
 
 I don't know why I'm calling them days, I'm doing this over the course of months whenever I feel like it.
 
-This quest however was nice and simple. All you need to use is Collection Counter, then adding the new generation multipled by the old generation.
+This quest however was nice and simple. All you need to use is Collection Counter, then adding the new generation multiplied by the old generation.
 
 Nice and simple, part three all you have to do is note down the different types of termites, loop through them all and do max–min.
 
 # Day 12
 
-.... This seems incredibly difficult. So, since this is coordinates I will be using imaginary numbers as they're less work than touples.
+.... This seems incredibly difficult. So, since this is coordinates I will be using imaginary numbers as they're less work than tuples.
 I can calculate where the projectile will start falling, because the targets are not close enough to the catapults to be hit while going up or across.
 
 The calculation is just the power up and twice the power across. Nice and easy. I can then put every single coordinate into a dictionary.
@@ -173,7 +173,7 @@ Since I only need the height, I'll only count the up and down commands as the re
 Okay, part 1 complete, but part two looks like it will need a Tensor.
 
 Spent more hours on that, don't use a Tensor, it is FAR too much work.
-Instead, I'll have a dictionary which holds all of the points I have visited, if I get a new point, nothing will happen as it is already set to True.
+Instead, I'll have a dictionary which holds all of the points I have visited, if I get a new point, nothing will happen as the point is already in the dictionary.
 I will then count how many items I have in the dictionary.
 
 The next one is harder, I have paths, and I need to find the shortest distances......... A* again? Really? I just did that in the last quest...
@@ -182,7 +182,7 @@ Fine. I will check every single item in the dictionary and then check if the adj
 
 # Day 15
 
-Dijkstra again? This feels repetetive at this point.
+Dijkstra again? This feels repetitive at this point.
 
 Nevermind, I've been trying this for quite a while, maybe a double dijkstra?
 Brute force methods are not working so well.
@@ -200,4 +200,4 @@ The only place the middle point connect to the other two is at the two "K"s. So 
 the "K"s.
 
 My previous code was not ready for this, however, just adding an extra loop allows me to have the dict values in alphabetical order, that means
-in the dict's index: 0 = "A", 1 = "B", 2 = "C", etc; instead of being a random jumble (which while being the same each time, is a pain to work with).
+in the dict's index: 0 = "A", 1 = "B", 2 = "C", etc; instead of being a random jumble of numbers (which while meaning the same thing, is a pain to work with).
