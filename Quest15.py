@@ -82,24 +82,34 @@ def Solve(part):
             Mpossibilities = permutations(list(range(4, 10)) + [list(Herbs.keys()).index("R"), len(Herbs)])
             Rpossibilities = permutations(range(10, len(Herbs)))
             Herbs["Start"] = [Start]
-            result = []
-            for i in Lpossibilities:
-                for j in i:
-                    print(list(Herbs.keys())[j])
-            for i in Mpossibilities:
-                for j in i:
-                    print(list(Herbs.keys())[j])
-            for i in Rpossibilities:
-                for j in i:
-                    print(list(Herbs.keys())[j])
-            
-            DistanceHerbs = dict()
-            SwirlDict = LTD(possible)
-            for herb in Herbs.values():
+            E = max(Herbs["E"], key=lambda x: x.real + x.imag)
+            R = min(Herbs["R"], key=lambda x: x.real + x.imag)
+            result = [[] for a in range(3)]
+            DistanceHerbs = [dict() for a in range(3)]
+            SwirlDict = [dict() for a in range(3)]
+            try: SwirlDict[0] = LTD(next(Lpossibilities)) 
+            except: pass
+            try: SwirlDict[1] = LTD(next(Mpossibilities)) 
+            except: pass
+            try: SwirlDict[2] = LTD(next(Rpossibilities)) 
+            except: pass
+            print(SwirlDict)
+            for herb in list(Herbs.values())[:5]:
                 for place in herb:
-                    DistanceHerbs[place] = Dijk(place)
-            result.append(Solve22((Start, 0), possible))
-            print(min(result))
+                    DistanceHerbs[0][place] = Dijk(place, 0)
+            MiddleHerbs = list(range(4, 10)) + [list(Herbs.keys()).index("R"), len(Herbs)-1]
+            for herb in MiddleHerbs:
+                for place in list(Herbs.values())[herb]:
+                    DistanceHerbs[1][place] = Dijk(place, 1)
+            for herb in list(Herbs.values())[10:len(Herbs)-1]:
+                for place in herb:
+                    DistanceHerbs[2][place] = Dijk(place, 2)
+
+            result[0].append(Solve22((E, 0), 0))
+            result[1].append(Solve22((Start, 0), 1))
+            result[2].append(Solve22((R, 0), 2))
+            print(min(result[0]) + min(result[1]) + min(result[2]))
+            Solve22.cache_clear()
 
 def LTD(L):
     D = dict()
@@ -127,17 +137,17 @@ def Solve1(Start:complex, Herbs):
     print(min(Paths)*2)
 
 @cache
-def Solve22(CNode, possible):
-    if Start != DistanceHerbs[CNode[0]][0][0]:
+def Solve22(CNode, whichDict):
+    if Start != DistanceHerbs[whichDict][CNode[0]][0][0]:
         routes = []
-        for herb in DistanceHerbs[CNode[0]]:
-            routes.append(CNode[1] + Solve22(herb, possible))
+        for herb in DistanceHerbs[whichDict][CNode[0]]:
+            routes.append(CNode[1] + Solve22(herb, whichDict))
         return min(routes)
     else:
-        return CNode[1] + DistanceHerbs[CNode[0]][0][1]
+        return CNode[1] + DistanceHerbs[whichDict][CNode[0]][0][1]
 
 
-def Dijk(Start:complex):
+def Dijk(Start:complex, whichDict:int):
     Distances = {node:float("infinity") for node in GraphDict.keys()}
     WhichHerb = -5
     for i in range(len(Herbs)):
@@ -162,7 +172,7 @@ def Dijk(Start:complex):
                 heapq.heappush(queue, (NDistance, (adjacent.real, adjacent.imag)))
     
     results = []
-    for square in list(Herbs.values())[(SwirlDict[WhichHerb])]:
+    for square in list(Herbs.values())[(SwirlDict[whichDict][WhichHerb])]:
         if square != Start or WhichHerb == len(Herbs.items()):
             results.append((square, Distances[square]))
     return results
