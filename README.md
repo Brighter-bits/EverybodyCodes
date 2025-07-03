@@ -201,3 +201,21 @@ the "K"s.
 
 My previous code was not ready for this, however, just adding an extra loop allows me to have the dict values in alphabetical order, that means
 in the dict's index: 0 = "A", 1 = "B", 2 = "C", etc; instead of being a random jumble of numbers (which while meaning the same thing, is a pain to work with).
+
+# Day 16
+
+Ah, a breath of fresh air. A rotation puzzle, part one is nice and simple, part 2 I just need to implement the mod procedure into my code and I'm good to go.
+
+Nevermind, I can't use mod, as I need every single cat on the way there. As such, I need to find the rotation in which each one part realigns.
+It's just like the snails, it's time for
+
+<span style="font-size: 35px;">CHINESE REMAINDER THEORUM</span>
+
+Nevermind, it's just Lowest Common Factor...
+
+Okay, so the next bit is a lot harder. Brute forcing it would take around 1.4x10^122 attempts. This is far too much to be tractable.
+
+One thing I've realised is I can memoise some calculations as they will be the same. However, this would require me to continually keep track of the remaining part of the permutation I am running through, which
+may be tricky. Not accounting for the problem that the cache will quickly fill up.
+
+Caching is not nearly enough of a 
