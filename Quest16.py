@@ -9,7 +9,6 @@ def Increment(pointers, rot,  resets):
         Npointers.append((pointers[i]+rot[i])%resets[i])
     return Npointers
 
-@cache
 def CatScore(pointers):
     global cats
     catline = ""
@@ -46,23 +45,17 @@ def ListLcm(nums):
         Factor = lcm(Factor, nums[i])
     return Factor
 
-def Up(l):
+def LeftLever(l, n):
+    global resets
     for i in range(len(l)):
-        l[i] += 1
+        l[i] = ((l[i] + n)%resets[i])
     return l
-
-def Down(l):
-    for i in range(len(l)):
-        l[i] -= 1
-    return l
-
-LtoStr = lambda L : ''.join(list(map(str, L)))
 
 def Solve(part):
-    CatScore.cache_clear()
+    # CatScore.cache_clear()
     RecursiveScore.cache_clear()
-    with open("16C.txt", "r") as f:
-        global rot, resets, cats
+    with open(Parts[part-1], "r") as f:
+        global rot, resets, cats, pointers
         inp = list(map(lambda x : x.replace("\n", ""), f.readlines()))
         rot = list(map(int, inp[0].split(",")))
         cats = inp[2:]
@@ -83,7 +76,7 @@ def Solve(part):
         if part == 1:
             for i in range(100):
                 pointers = Increment(pointers, rot, resets)
-            line = CatScore(LtoStr(pointers))
+            line = CatScore(pointers)
             newline = ""
             for i in range(len(line[0])//3):
                 newline += line[0][3*i:(3*i)+3] + " "
@@ -95,43 +88,36 @@ def Solve(part):
             Tmod = ListLcm(resets)
             for i in range(Tmod):
                 pointers = Increment(pointers, rot, resets)
-                total += CatScore(LtoStr(pointers))[1]
+                total += CatScore(pointers)[1]
             total *= 202420242024//Tmod
             leftover = 202420242024%Tmod
             for i in range(leftover):
                 pointers = Increment(pointers, rot, resets)
-                total += CatScore(LtoStr(pointers))[1]
+                total += CatScore(pointers)[1]
             print(total)
         elif part == 3:
             for i in range(len(cats)):
                 cats[i] = list(map(lambda x : x[0] + x[2], cats[i]))
-            from itertools import product
-            status = product("NFB", repeat=256)
             Highest = -10
             Lowest = 100000000000000
-            while status:
-                Cstatus = ''.join(reversed(next(status)))
-                total = RecursiveScore(Cstatus, "000")
-                if total > Highest:
-                    Highest = total
-                if total < Lowest:
-                    Lowest = total
-                print(f'{Highest} {Lowest}')
+            Highest, Lowest = RecursiveScore(0, p3Target)
+            print(f'{Highest} {Lowest}')
 
+LtoStr = lambda L : ' '.join(list(map(str, L)))
 
 @cache
-def RecursiveScore(left, pointers):
-    pointers = list(map(int, list(pointers)))
-    match left[0]:
-        case "F":
-            pointers = Up(pointers)
-        case "B":
-            pointers = Down(pointers)
-    pointers = Increment(pointers, rot, resets)
-    if len(left) != 1:
-        return CatScore(LtoStr(pointers))[1] + RecursiveScore(left[1:], LtoStr(pointers))
+def RecursiveScore(offset, left):
+    global pointers
+    Cpointers = pointers
+    for i in range(p3Target-left):
+        Cpointers = Increment(Cpointers, rot, resets)
+    Cpointers = LeftLever(Cpointers, offset)
+    if left == p3Target:
+        return max(RecursiveScore(offset+i, left-1)[0] for i in [-1,0,1]), min(RecursiveScore(offset+i, left-1)[1] for i in [-1,0,1])
+    if left != 0:
+        return max((CatScore(Cpointers)[1] + RecursiveScore(offset+i, left-1)[0] for i in [-1,0,1])), min((CatScore(Cpointers)[1] + RecursiveScore(offset+i, left-1)[1] for i in [-1,0,1]))
     else:
-        return CatScore(LtoStr(pointers))[1]
+        return CatScore(Cpointers)[1], CatScore(Cpointers)[1]
         
 
 
@@ -143,10 +129,9 @@ def RecursiveScore(left, pointers):
 
             
 
-            
-
-
-Solve(3)
+p3Target = 256
+for i in range(1, 4):         
+    Solve(i)
                 
     
     

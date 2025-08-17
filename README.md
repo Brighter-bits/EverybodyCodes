@@ -218,4 +218,22 @@ Okay, so the next bit is a lot harder. Brute forcing it would take around 1.4x10
 One thing I've realised is I can memoise some calculations as they will be the same. However, this would require me to continually keep track of the remaining part of the permutation I am running through, which
 may be tricky. Not accounting for the problem that the cache will quickly fill up.
 
-Caching is not nearly enough of a 
+Caching is not nearly enough of a bonus to get through this.
+
+It seems that the way I'm doing this is too inefficient, I'm not sure exactly how I can do this, but I have taken a quick peek at those in the solution spotlight.
+
+Taking some inspiration from [this repo](https://github.com/AllanTaylor314/EverybodyCodes/blob/main/2024/16.py) and spending about two hours only to figure out that python's mod function works perfectly with
+negative numbers, and I didn't need to "fix" anything, I am now done with this ~~day~~ Quest.
+
+# Day 17
+
+It's Dijkstra... again... Or is it??
+It's not, I've tried Dijkstra in about three different ways now.
+
+I've spent hours and I'm still on part 1. Doing some searching lead me to [Prim's algorithm](https://en.wikipedia.org/wiki/Prim's_algorithm), which appears to be exactly what I need.
+
+I have also found I've been using heapq wrong, by putting the neighbour before the distance.
+
+For the final part, I've created a new function which just keeps making new connections to old stars, until it's made all of the connections that it can.
+
+I had a slight problem where I was finding the correct shortest distance, but then 
