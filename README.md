@@ -236,4 +236,13 @@ I have also found I've been using heapq wrong, by putting the neighbour before t
 
 For the final part, I've created a new function which just keeps making new connections to old stars, until it's made all of the connections that it can.
 
-I had a slight problem where I was finding the correct shortest distance, but then 
+I had a slight problem where I was finding the correct shortest distance, but then (I have no clue what I was about to say here, it has been months)
+
+# Day 18
+
+It's another flood fill problem. We flood fill, then find the time it takes to reach each tree, then find the largest one as that is the time it takes.
+
+Part 2 is quite similar, however, we now have to store how long it takes to get to each palm, and then update it if a different entrance has a shorter time.
+
+Part 3... I'm not good at programming, I'm just going to brute force it. Firstly, I've updated the Flood Fill to stop as soon as we have reached every palm. And I am only only checking a central square of
+possibilities, as the edges most likely don't have the shortest paths. One small problem, I set it to display the maximum sum of paths instead of the minimum...
