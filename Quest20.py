@@ -6,28 +6,33 @@ def FindStart(Grid):
         for x in range(len(Grid[0])):
             if Grid[y][x] == "S":
                 return complex(x, y)
-
-def FloodFind(grid:list, Node:complex):
-    if Node in Visited:
+Visited = []
+GraphDict = dict()
+def FloodFind(grid:list, Node: tuple[int, complex]):
+    x = int(Node[1].real)
+    y = int(Node[1].imag)
+    if Node in Visited or grid[y][x] == "#":
         return
     if Node not in GraphDict:
         GraphDict[Node] = []
-    x = int(Node.real)
-    y = int(Node.imag)
     Visited.append(Node)
-    time = 1
-    if y > 0 and grid[y-1][x] not in GraphDict[Node]:
-        GraphDict[Node].append((complex(x, y-1), time))
-        FloodFind(grid, complex(x, y-1))
-    if y < len(grid)-1 and grid[y+1][x] not in GraphDict[Node]:
-        GraphDict[Node].append((complex(x, y+1), time))
-        FloodFind(grid, complex(x, y+1))
-    if x > 0 and grid[y][x-1] not in GraphDict[Node]:
-        GraphDict[Node].append((complex(x-1, y), time))
-        FloodFind(grid, complex(x-1, y))
-    if x < len(grid[0])-1 and grid[y][x+1] not in GraphDict[Node]:
-        GraphDict[Node].append((complex(x+1, y), time))
-        FloodFind(grid, complex(x+1, y))
+    HeightChange = -1 if grid[y][x] == "." else (-2 if grid[y][x] == "-" else 2)
+    if y > 0 and grid[y-1][x] not in GraphDict[Node] and Node[0] != 2:
+        GraphDict[Node].append((Node, HeightChange))
+        FloodFind(grid, (0, complex(x, y-1)))
+                
+
+    if y < len(grid)-1 and grid[y+1][x] not in GraphDict[Node]and Node[0] != 0:
+        GraphDict[Node].append((Node, HeightChange))
+        FloodFind(grid, (1, complex(x, y+1)))
+
+    if x > 0 and grid[y][x-1] not in GraphDict[Node]and Node[0] != 1:
+        GraphDict[Node].append((Node, HeightChange))
+        FloodFind(grid, (2, complex(x-1, y)))
+
+    if x < len(grid[0])-1 and grid[y][x+1] not in GraphDict[Node]and Node[0] != 3:
+        GraphDict[Node].append((Node, HeightChange))
+        FloodFind(grid, (3, complex(x+1, y)))
 
 # def Feeler(Grid, Start:complex, Instructions):
 #     Glider = Start
@@ -51,8 +56,9 @@ def FloodFind(grid:list, Node:complex):
 #     return Height
 
 def WeirdDijkstra(Grid, Start):
-
+    pass
 with open(Parts[0]) as f:
     inp = list(map(lambda x: list(x.replace("\n", "")), f.readlines()))
-    Starts = FindStart(inp)
-
+    Start = FindStart(inp)
+    FloodFind(inp, (2, Start))
+    print(GraphDict)
