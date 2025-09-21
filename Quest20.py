@@ -1,11 +1,12 @@
 Parts = ["everybody_codes_e2024_q20_p1.txt", "everybody_codes_e2024_q20_p2.txt", "everybody_codes_e2024_q20_p3.txt"]
 Dirs = [0+1j, complex(1), 0-1j, complex(-1)] # Up, Right, Down, Left. +1 on the pointer is turn right, -1 on the pointer is turn left
-
+import sys
+sys.setrecursionlimit(16000)
 HeightChangeFunc = lambda x: -1 if x == "+" else (2 if x == "-" else 1)
-def FindStart(Grid):
-    for y in [0, len(Grid)-1]:
+def FindPoint(Grid, Letter):
+    for y in range(0, len(Grid)-1):
         for x in range(len(Grid[0])):
-            if Grid[y][x] == "S":
+            if Grid[y][x] == Letter:
                 return complex(x, y)
 Visited = []
 GraphDict = dict()
@@ -74,7 +75,9 @@ def FloodFind(grid:list, Node: tuple[int, complex]):
 #                     distances[GraphDict[a][b][0]] = distances[a] + GraphDict[a][b][1]
 #     return distances
 
-def NormalDijkstra(Start):
+ManHat = lambda x, y: int(abs(x.real + y.real) + abs(x.imag, y.imag))
+
+def NormalDijkstra(Start, Tlimit):
     Distances = {node: (float("infinity"), 0) for node in GraphDict.keys()}
     Distances[Start] = (0, 0)
     import heapq
@@ -83,7 +86,7 @@ def NormalDijkstra(Start):
     while queue:
         IDK, CDistance, CTime, CDir, CReal, CImag = heapq.heappop(queue)
         CNode = (CDir, complex(CReal, CImag))
-        if CDistance > Distances[CNode][0] or CTime == 100:
+        if CDistance > Distances[CNode][0] or CTime == Tlimit:
             continue
         for adjacent, weight in GraphDict[CNode]:
             distance = (CDistance + weight, CTime + 1)
@@ -92,13 +95,22 @@ def NormalDijkstra(Start):
                 heapq.heappush(queue, (distance[1]-distance[0], distance[0], distance[1], adjacent[0], adjacent[1].real, adjacent[1].imag))
     return Distances
 
+def Solve(part):
+    with open(Parts[part-1]) as f:
+        inp = list(map(lambda x: list(x.replace("\n", "")), f.readlines()))
+        Start = FindPoint(inp, "S")
+        FloodFind(inp, (2, Start))
+        if part == 1:
+            distances = NormalDijkstra((2, Start), 100)
+            distances = [x for x in list(map(lambda x: x[0] if x[1] == 100 else None, distances.values())) if x is not None]
+            import os
+            os.system("cls")
+            print(1000 - min(distances))
+        elif part == 2:
+            Points = [x for x in list(map(lambda x: FindPoint(inp, x), list("ABCDEFGHIJKLMNOPQRTUVWXYZ"))) if x is not None]
+            Points.insert(Start)
+            distances = dict()
+            for StartingPoint in Points:
+                distances[StartingPoint] = 
 
-with open(Parts[0]) as f:
-    inp = list(map(lambda x: list(x.replace("\n", "")), f.readlines()))
-    Start = FindStart(inp)
-    FloodFind(inp, (2, Start))
-    distances = NormalDijkstra((2, Start))
-    distances = [x for x in list(map(lambda x: x[0] if x[1] == 100 else None, distances.values())) if x is not None]
-    import os
-    os.system("cls")
-    print(1000 - min(distances))
+Solve(2)
