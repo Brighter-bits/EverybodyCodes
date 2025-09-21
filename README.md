@@ -246,3 +246,22 @@ Part 2 is quite similar, however, we now have to store how long it takes to get 
 
 Part 3... I'm not good at programming, I'm just going to brute force it. Firstly, I've updated the Flood Fill to stop as soon as we have reached every palm. And I am only only checking a central square of
 possibilities, as the edges most likely don't have the shortest paths. One small problem, I set it to display the maximum sum of paths instead of the minimum, so I've had to run it twice...
+
+# Day 20
+
+This one is a toughie. It feels like a dijkstra problem, and it might be, but attempting to use that causes a few problems. Mostly due to the negatives. Making a directional graph, where the graph's weights
+change depending on which way you are facing (a thing that Dijkstra does not take into account) is also not the easiest thing to implement.
+
+Brute forcing has not worked, and so I'm trying the [Bellman-Ford Algorithm](https://www.w3schools.com/dsa/dsa_algo_graphs_bellmanford.php) as that is designed to work with negatives. If I cap the number of
+pass-overs with 100 instead of Nodes - 1, I should be fine?
+
+I got -7000... It did not work out. I probably need a dynamic programming implementation but I have on clue how to do this. I'm going to have to do a lot of googling.
+
+What if I just use Dijkstra? It can't be that bad, if I just have the Dijkstra save the time, then not make any new connections if the time is 100?
+
+It works for the example, but not the input...
+
+I looked on the subreddit and found [this post](https://www.reddit.com/r/everybodycodes/comments/1hi4qq3/2024_q20_part_1_only_correct_on_example_input/) which said about using the (new time – altitude) for the
+first part of the heapq.
+
+I don't know why but it works??
