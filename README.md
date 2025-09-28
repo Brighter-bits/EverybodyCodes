@@ -268,3 +268,5 @@ I don't know why but it works??
 
 The next part is horrific. I do not understand it. HELP ME! I've had to split my Dijkstra and hope no errors occur (they did, you cannot save half of the priority queue for later, it apparently just works!)
 Unfortunately, I did have to ask AId, and it told me that apprently I can just put my dijkstra back to how it was.
+
+That also didn't work. But I have found that BellManFord might work, as it turns out that each pass is basically just a single hop... I swear if there was an easy algorithm this entire time...

@@ -67,7 +67,8 @@ def FloodFind(grid:list, Node: tuple[int, complex]):
 #         if Grid[int(Glider.imag)][int(Glider.real)] == "+":
 #             Height += 1
 #     return Height
-
+def BellManFord(Start, Tlimit):
+    
 def WeirdDijkstra(Start, Tlimit, previousQueue = [], previousDistances = {}):
     if len(previousQueue) == 0:
         Distances = {node: (float("infinity"), 0) for node in GraphDict.keys()}
@@ -83,6 +84,7 @@ def WeirdDijkstra(Start, Tlimit, previousQueue = [], previousDistances = {}):
         if CTime >= Tlimit:
             heapq.heappush(queue, (CTime, CDistance, CDir, CReal, CImag))
             Going = False
+            break
         if CDistance > Distances[CNode][0]:
             continue
         for adjacent, weight in GraphDict[CNode]:
