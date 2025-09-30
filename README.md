@@ -266,7 +266,16 @@ first part of the heapq.
 
 I don't know why but it works??
 
-The next part is horrific. I do not understand it. HELP ME! I've had to split my Dijkstra and hope no errors occur (they did, you cannot save half of the priority queue for later, it apparently just works!)
-Unfortunately, I did have to ask AId, and it told me that apprently I can just put my dijkstra back to how it was.
+The next part is horrific. I do not understand it. HELP ME! I've had to split my Dijkstra and hope no errors occur (they did, you cannot save half of the priority queue for later, it apparently just doesn't work!)
+Unfortunately, I did have to ask AId, and it told me that apparently I can just put my dijkstra back to how it was.
 
 That also didn't work. But I have found that BellManFord might work, as it turns out that each pass is basically just a single hop... I swear if there was an easy algorithm this entire time...
+
+BELLMAN FORD IS WORKING!!!!!
+
+BELLMAN FORD IT NOT WORKING!!!!! Turns out I once more have spent hours debugging something that that wasn't broken, because [of course, I can't read, and this lovely person was unable to either](https://www.reddit.com/r/everybodycodes/comments/1h80xah/2024_q20_part_2_code_passes_all_given_samples_but/).
+
+I DID IT!!!!!!! I'm pretty sure I know it works... I'll look over this later.
+
+My goodness, part 3 looks so easy. I just need to keep doing it on the individual grids, until the pattern repeats, then it's easy! I'm doing it later though, I'm too tired.
+

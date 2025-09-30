@@ -67,8 +67,23 @@ def FloodFind(grid:list, Node: tuple[int, complex]):
 #         if Grid[int(Glider.imag)][int(Glider.real)] == "+":
 #             Height += 1
 #     return Height
-def BellManFord(Start, Tlimit):
+def BellManFord(Start, Time, previousDistances = []):
+    if len(previousDistances) == 0:
+        Distances = {node: (float("infinity"), 0) for node in GraphDict.keys()}
+        Distances[Start] = (0, 0)
+    else:
+        Distances = previousDistances
+    NewDistances = deepcopy(Distances)
+    for CNode in GraphDict.keys():
+        for ANode in GraphDict[CNode]:
+            if Distances[CNode][0] + ANode[1] < NewDistances[ANode[0]][0]:
+                NewDistances[ANode[0]] = (Distances[CNode][0] + ANode[1], Time)
+    return NewDistances
+
+
     
+
+
 def WeirdDijkstra(Start, Tlimit, previousQueue = [], previousDistances = {}):
     if len(previousQueue) == 0:
         Distances = {node: (float("infinity"), 0) for node in GraphDict.keys()}
@@ -96,29 +111,32 @@ def WeirdDijkstra(Start, Tlimit, previousQueue = [], previousDistances = {}):
 
 def AddTuples(x:tuple[int, int], y:tuple[int, int]) -> tuple[int, int]: return (x[0] + y[0], x[1] + y[1])
 
-def DictMix(Dict:dict, Start):
-    Options = permutations([x for x in Dict.keys() if x != Start])
-    Totals = []
-    for option in Options:
-        individualTotals = []
-        option = list(option)
-        option.append(Start)
-        option.insert(0, Start)
+from functools import cache
+@cache
+def AddFourTuples(a:tuple[int, int], b:tuple[int, int], c:tuple[int, int], d:tuple[int, int]): return AddTuples(AddTuples(AddTuples(a, b), c), d)
 
-        for i in range(len(option) - 1):
-            individualTotals.append(Dict[option[i]][option[i+1]])
-        for i in individualTotals[0]:
-            for j in individualTotals[1]:
-                for k in individualTotals[2]:
-                    for l in individualTotals[3]:
-                        Totals.append(AddTuples(AddTuples(AddTuples(i, j), k), l))
+def DictMix(Dict:dict, Start):
+    option = [x for x in Dict.keys() if x != Start]
+    Totals = []
+    individualTotals = []
+    option = list(option)
+    option.append(Start)
+    option.insert(0, Start)
+
+    for i in range(len(option) - 1):
+        individualTotals.append(Dict[option[i]][option[i+1]])
+    for i in individualTotals[0]:
+        for j in individualTotals[1]:
+            for k in individualTotals[2]:
+                for l in individualTotals[3]:
+                    Totals.append(AddFourTuples(i, j, k, l))
 
 
     return Totals
 
 def ListCheck(value, list):
     for i in list:
-        if value > i[0]:
+        if value >= i[0]:
             return False
     return True
 
@@ -141,7 +159,7 @@ def NormalDijkstra(Start, Tlimit):
     return Distances
 
 def Solve(part):
-    with open("Q20B2.txt") as f:
+    with open(Parts[part-1]) as f:
         inp = list(map(lambda x: list(x.replace("\n", "")), f.readlines()))
         Start = FindPoint(inp, "S")
         FloodFind(inp, (2, Start))
@@ -160,14 +178,13 @@ def Solve(part):
                 for OtherPoint in Points:
                     if point != OtherPoint:
                         ShortestDistances[point][OtherPoint] = [(1000, 1000)]
-            rounds = 1
-            previousQueue = []
             dists = {}
+            round = 1
             while True:
                 distances = dict()
                 for StartingPoint in Points:
-                    dists, previousQueue = WeirdDijkstra((2, StartingPoint), rounds, previousQueue, dists)
-                    distances[StartingPoint] = [x for x in list(dists.items()) if x[0][1] in Points and x[0][1] != StartingPoint and x[1][1] != 0]
+                    dists[StartingPoint] = BellManFord((2, StartingPoint), round, dists[StartingPoint] if StartingPoint in dists else [])
+                    distances[StartingPoint] = [x for x in list(dists[StartingPoint].items()) if x[0][1] in Points and x[0][1] != StartingPoint and x[1][1] != 0]
                 for i in distances:
                     CacheDict = dict()
                     for j in range(len(distances[i])):
@@ -182,10 +199,12 @@ def Solve(part):
                 values = [x for x in DictMix(ShortestDistances, Points[-1]) if x[0] <= 0]
                 
                 if len(values) != 0:
-                    print(values)
-                    breakpoint()
-                rounds += 1
-            
+                    print(min(values, key=lambda x: x[1])+4) # We add four (one for each node we visit apart from the last one).
+                    # breakpoint()
+                
+                round += 1
+        elif part == 3:
+            pass
 
                         
 
