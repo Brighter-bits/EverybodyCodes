@@ -279,3 +279,5 @@ I DID IT!!!!!!! I'm pretty sure I know it works... I'll look over this later.
 
 My goodness, part 3 looks so easy. I just need to keep doing it on the individual grids, until the pattern repeats, then it's easy! I'm doing it later though, I'm too tired.
 
+Nevermind, just do it manually, it's obvious from the positioning of the heat currents, however, I want to code it anyway.
+

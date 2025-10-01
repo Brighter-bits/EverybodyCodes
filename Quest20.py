@@ -81,7 +81,11 @@ def BellManFord(Start, Time, previousDistances = []):
     return NewDistances
 
 
-    
+def MultiBellMan(Start, Loops):
+    dists = {}
+    for i in range(Loops):
+        dists = BellManFord(Start, i, dists)
+    return dists
 
 
 def WeirdDijkstra(Start, Tlimit, previousQueue = [], previousDistances = {}):
@@ -158,6 +162,10 @@ def NormalDijkstra(Start, Tlimit):
                 heapq.heappush(queue, (distance[1]-distance[0], distance[0], distance[1], adjacent[0], adjacent[1].real, adjacent[1].imag))
     return Distances
 
+def ShortestBellPath(Start, EndPoints, inp):
+    ShortestDistance = min([x for x in list(MultiBellMan((2, Start), len(inp)*len(inp[0])).items()) if x[0] in EndPoints], key = lambda x: x[1][0])
+    return ShortestDistance
+
 def Solve(part):
     with open(Parts[part-1]) as f:
         inp = list(map(lambda x: list(x.replace("\n", "")), f.readlines()))
@@ -204,8 +212,45 @@ def Solve(part):
                 
                 round += 1
         elif part == 3:
-            pass
+            ShortestDistances = dict()
+            EndPoints = [(2, complex(x, len(inp)-1)) for x in range(len(inp[len(inp)-1])) if inp[len(inp)-1][x] != "#"]
+            for i in range(1, len(inp[0])-1):
+                FloodFind(inp, (2, complex(i, 0))) # This just makes it so that the Graphdict can start connect while starting from downwards at any point at the top.
+
+            Distances = {}
+            total = 0
+            CNode = Start
+            while True:
+                Node, AltTime = ShortestBellPath(CNode, EndPoints, inp)
+                Distances[CNode] = (AltTime[0] + 1, Node[1]) # Plus one for the transition
+                CNode = Node[1] + complex(0, -Node[1].imag)
+                if CNode in Distances: # The pattern has to loop eventually
+                    break
+            Leading = 0
+            Divisor = 0
+            CNode = Start
+            BellVisited = []
+            while True:
+                Leading += Distances[CNode][0]
+                BellVisited.append(CNode)
+                CNode = Distances[CNode][1] + complex(0, -Distances[CNode][1].imag)
+                if CNode in BellVisited:
+                    break
+            LeadingPages = len(BellVisited)
+            BellVisited = [] # We're in a loop, hooray, now we find how long each cycle of the loop is
+            while True:
+                Divisor += Distances[CNode][0]
+                BellVisited.append(CNode)
+                CNode = Distances[CNode][1] + complex(0, -Distances[CNode][1].imag)
+                if CNode in BellVisited:
+                    break
+            Altitude = 384400 - Leading
+            div, mod = divmod(Altitude, Divisor)
+            print(LeadingPages*len(inp) + div*len(inp) + mod)
+
+
+
 
                         
 
-Solve(2)
+Solve(3)
