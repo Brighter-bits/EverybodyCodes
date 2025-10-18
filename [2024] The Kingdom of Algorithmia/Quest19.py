@@ -1,7 +1,10 @@
-Parts = ["everybody_codes_e2024_q19_p1.txt", "everybody_codes_e2024_q19_p2.txt", "everybody_codes_e2024_q19_p3.txt"]
+Parts = ["everybody_codes_e2024_q19_p1.txt", "everybody_codes_e2024_q19_p2.txt", "everybody_codes_e2024_q19_p3.txt", "everybody_codes_e2024_q21.txt"]
 from itertools import cycle
 from copy import deepcopy
-def Spin(dir, Piece):
+def Spin(dir:str, Piece):
+    """
+    A function which takes a grid of 9 letters, and spins them round.
+    """
     if dir == "R":
         return [[Piece[1][0], Piece[0][0], Piece[0][1]], [Piece[2][0], Piece[1][1], Piece[0][2]], [Piece[2][1], Piece[2][2], Piece[1][2]]]
     elif dir == "L":
@@ -11,6 +14,9 @@ def Spin(dir, Piece):
 
 
 def Pass(instructions, grid):
+    """
+    Passes over the entire grid, and spins each space once
+    """
     for row in range(len(grid)-2):
         for i in range(len(grid[2])-2):
             Piece = [grid[row][i:i+3], grid[row+1][i:i+3], grid[row+2][i:i+3]]
@@ -34,7 +40,11 @@ def Solve1n2(part):
                 num = "".join(list(re.findall(r'>(.*?)<', "".join(line))))
             print("".join(line))
         print("\n\n" + num)
+
+
 jump = 4000
+
+
 def GuideGrid(instructions, rows, columns):
     counter = 0
     grid = []
@@ -68,4 +78,19 @@ def Solve3():
         for line in grid:
             print("".join(line))
 
-Solve3()
+
+
+def Solve4(): # This simple solution is probably wrong, but I can kind of read the message, so it's fine. It's correct, you just need to get rid of the EVIL curved apostrophes.
+    with open(Parts[3]) as f:
+        inp = list(map(lambda x: list(x.replace("\n", "")), f.readlines()))
+        grid = inp[2:]
+        splitPoint = inp[0].index(":")
+        times = int("".join(inp[0][:splitPoint]))
+        for i in range(times):
+            instructions = cycle(inp[0][splitPoint:][1:])
+            grid = Pass(instructions, grid)
+        for i in grid:
+            print("".join(i))
+
+Solve4()
+        
