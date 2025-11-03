@@ -4,3 +4,8 @@ understand that the global leaderboard was sort of corrupted by AI, and making a
 I guess EC will have to fill this hole in my heart.
 
 # Day 1
+
+A fun first quest, I did it quite quickly and had little trouble, I'm going to make the code a bit prettier though. And I did waste about two minutes because I hadn't incremented to the next part on the third
+part.
+
+Also, I'm actually really enjoying the theme and it's only been one day. Hopefully it's not dijkstra, dijkstra, dijkstra like last year.

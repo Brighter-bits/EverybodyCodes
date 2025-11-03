@@ -5,44 +5,32 @@ def StringToDir(str):
     else:
         return int(str[1:])
 
-# with open(Parts[0], "r") as f:
-#     names = f.readline().split(",")
-#     f.readline()
-#     instructs = f.readline().split(",")
-#     instructs = list(map(StringToDir, instructs))
-#     pointer = 0
-#     for num in instructs:
-#         pointer += num
-#         if pointer < 0:
-#             pointer = 0
-#         if pointer > len(names)-1:
-#             pointer = len(names)-1
-#     print(names[pointer])
+def Solve(part):
+    with open(Parts[part-1], "r") as f:
+        names = f.readline().split(",")
+        f.readline()
+        instructs = f.readline().split(",")
+        instructs = list(map(StringToDir, instructs))
+        pointer = 0
+        if part == 1:
+            for num in instructs:
+                pointer += num
+                if pointer < 0:
+                    pointer = 0
+                if pointer > len(names)-1:
+                    pointer = len(names)-1
+            print(names[pointer])
+        elif part == 2:
+            for num in instructs:
+                pointer += num
+                if pointer < 0 or pointer > len(names)-1:
+                    pointer %= len(names)
+            print(names[pointer])
+        elif part == 3:
+            for num in instructs:
+                pointer = num % len(names)
+                names[0], names[pointer] = names[pointer], names[0]
+            print(names[0])
 
-# with open(Parts[1], "r") as f:
-#     names = f.readline().split(",")
-#     f.readline()
-#     instructs = f.readline().split(",")
-#     instructs = list(map(StringToDir, instructs))
-#     pointer = 0
-#     for num in instructs:
-#         pointer += num
-#         if pointer < 0:
-#             pointer %= len(names)
-#         if pointer > len(names)-1:
-#             pointer %= len(names)
-#     print(names[pointer])
-
-
-with open(Parts[2], "r") as f:
-    names = f.readline().split(",")
-    f.readline()
-    instructs = f.readline().split(",")
-    instructs = list(map(StringToDir, instructs))
-    pointer = 0
-    for num in instructs:
-        cache = names[0]
-        pointer = num % len(names)
-        names[0] = names[pointer]
-        names[pointer] = cache
-    print(names[0])
+for i in range(1,4):
+    Solve(i)
