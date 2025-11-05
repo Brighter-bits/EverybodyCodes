@@ -17,3 +17,9 @@ negative fractional number, instead of just ignoring the fraction, it goes to th
 
 It makes sense, but I'm still a bit annoyed that I could have just used a single different function and would have done way better. I guess this is how you learn. I'M COMING FOR YOU TONYA!!! (For reference,
 this is the person now heading the UK, I **will** win... just give me time... maybe... unless the next puzzles are really difficult... then maybe not...)
+
+Wow, I was clearly very tired yesterday, because I didn't even make the code spit out every single part correctly.
+
+# Day 3
+
+Another easy one, either I've gotten better, or the challenges are easier than last year. For the sake of my ego, I have decided it's the former. Once I understood what was going on, it was quite easy to handle.
