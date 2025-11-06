@@ -22,4 +22,12 @@ Wow, I was clearly very tired yesterday, because I didn't even make the code spi
 
 # Day 3
 
-Another easy one, either I've gotten better, or the challenges are easier than last year. For the sake of my ego, I have decided it's the former. Once I understood what was going on, it was quite easy to handle.
+Another easy one, either I've gotten better, or the challenges are easier than last year. For the sake of my ego, I have decided it's the former. Once I understood what was going on, it was quite easy to
+handle.
+
+# Day 4
+
+Geeze, I'm so sleepy that I can't do basic maths... This took me far longer than it should have, mostly because for my differences I kept finding the difference between the first and second numbers, over and
+over and over, instead of finding the proper differences across the entire list.
+
+Do not code while sleepy, bad idea.
