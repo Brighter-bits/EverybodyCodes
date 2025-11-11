@@ -66,10 +66,10 @@ def Solve1n2(part):
                 Start.Attach(i)
             boneyboys.append(Start)
         if part == 1:
-            print(Start.FirstOrder)
+            print(boneyboys[0].Reveal())
         else:
-            boneyboys = list(map(lambda x: x.FirstOrder, ))
-            print(max())
+            boneyboys = list(map(lambda x: int(x.Reveal()), boneyboys))
+            print(int(max(boneyboys)) - int(min(boneyboys)))
 
 
 def Solve3():
@@ -156,5 +156,7 @@ def Solve3():
 
         
 
-# Solve(1)
-# Solve(2)
+Solve1n2(1)
+Solve1n2(2)
+Solve3()
+

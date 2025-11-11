@@ -41,3 +41,39 @@ have any headbanging errors, just a few that I managed to rubber duck my way thr
 
 Oh my god, how do people do this puzzle that fast?? Ahhh, so, since all the SecondOrder items are going to have the same number of levels, you can just have a list of [quality, first level, second level, ..., id].
 Instead of doing whatever the hell I just did. Touché, but now I've been knocked down once again. I must reclaim my throne (unlikely as it is, as stuff only gets harder from here.)
+
+# Day 6
+
+Wow, I'm being such an idiot today. I tried being fancy with regex and that lost me a lot of time. For the second part I copied my input incorrectly somehow? For the third part, an off by one error.
+
+So, to calm myself down, I'm going to explain through the solution and actually comment my code for once...
+
+<br><br>
+
+The "real" input is structured:
+
+```inp | inp | inp | inp | inp | ... | inp```
+<br>
+
+Let's say that our input is ```AaaaA```. So if we zoom in we get as a small example:
+
+```AaaaA | AaaaA | AaaaA```
+
+<br><br>
+Let's say that the maximum distance is 2.
+
+In the middle we have ```| AaaaA |``` which has 4 matches contained inside the input.
+<br><br>
+However, the matches can also overflow
+
+```AaaaA | AaaaA``` , we can overflow backwards ```aA|A``` , for one match, and overflow forwards for one match ```A | Aa```.
+
+If we had overflow forwards with something like ```Aa | Aa``` then we would have to count all of the ```a```'s to the right of the break and not count the one inside the inp, and the same backwards.
+
+<br><br>
+
+Okay, so we now have how many matches are inside the inp, how many overflow forwards and how many overflow backwards.
+
+We have 1000 individual inputs, meaning we can overflow forward 999 times and backwards 999 times. We add all of these up, and we get the answer to part 3.
+
+I spent over an hour on this.
