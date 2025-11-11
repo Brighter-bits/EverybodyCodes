@@ -77,3 +77,14 @@ Okay, so we now have how many matches are inside the inp, how many overflow forw
 We have 1000 individual inputs, meaning we can overflow forward 999 times and backwards 999 times. We add all of these up, and we get the answer to part 3.
 
 I spent over an hour on this.
+
+# Day 7
+
+I'm not doing documentation today
+
+Today was really quite easy, meaning tomorrow is probably going to be the ramping up point. However... FIRST! I got first for part 1! I am exhilarated! I just saw it and thought "What if I did it manually?"
+
+And so I did.
+
+After that however, I had to code. Part 2 was easy enough. Part 3 however, I kept getting an error. It took me about 30 minutes to actually find the error... It was to do with the fact that ```abc``` and
+```abcd``` would both eventually get ```abcdefg``` as a word they could make. The slight problem is that this is not a unique word both times. So I had to quickly come up with a janky way to get rid of any duplicates.
