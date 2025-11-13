@@ -87,4 +87,15 @@ Today was really quite easy, meaning tomorrow is probably going to be the rampin
 And so I did.
 
 After that however, I had to code. Part 2 was easy enough. Part 3 however, I kept getting an error. It took me about 30 minutes to actually find the error... It was to do with the fact that ```abc``` and
-```abcd``` would both eventually get ```abcdefg``` as a word they could make. The slight problem is that this is not a unique word both times. So I had to quickly come up with a janky way to get rid of any duplicates.
+```abcd``` would both eventually get ```abcdefg``` as a word they could make. The slight problem is that this is not a unique word both times. So I had to quickly come up with a janky way to get rid of any
+duplicates.
+
+# Day 8
+
+... ahh... This day kicked my behind, my hatred for geometry has once again caught up with me.
+
+My initial code was... certainly something to behold. Turns out a better solution was incredibly easy after looking at the Solution Spotlight for a bit. But my goodness I can't do geometry.
+
+<p style="font-size:100px">I hate shapes, especially circles.<p>
+
+Also, my part 3 is really inefficient. But I don't care, this took two hours longer than every other puzzle so far.
