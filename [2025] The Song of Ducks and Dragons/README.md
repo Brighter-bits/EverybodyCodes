@@ -99,3 +99,10 @@ My initial code was... certainly something to behold. Turns out a better solutio
 <p style="font-size:100px">I hate shapes, especially circles.<p>
 
 Also, my part 3 is really inefficient. But I don't care, this took two hours longer than every other puzzle so far.
+
+# Day 9
+
+Overall, great fun, I do need to go to bed now however. It took a bit of time to think up what to do, but after the advice to "always make it a function", I think the code has gotten much better. My part 3 is a
+bit slow, but it's fine overall.
+
+I only ever encountered one problem, and that was that I always assumed that the scale number would be one digit... it was not.
