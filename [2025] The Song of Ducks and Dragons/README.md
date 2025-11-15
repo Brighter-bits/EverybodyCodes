@@ -106,3 +106,9 @@ Overall, great fun, I do need to go to bed now however. It took a bit of time to
 bit slow, but it's fine overall.
 
 I only ever encountered one problem, and that was that I always assumed that the scale number would be one digit... it was not.
+
+# Day 10
+
+I never thought it would be chess, but hey. I have WAY too many functions, that I'm going to clean up. I did it all, I used caching to speed up the end. It all works... hooray.
+
+I feel as if there is a better method to do this rather than just brute forcing it, as it takes a minute or two to complete.
