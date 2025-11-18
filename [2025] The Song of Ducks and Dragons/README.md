@@ -136,6 +136,14 @@ Turns out, if you get rid of all the negative ones, it works! Why? I don't know.
 Okay, I just asked ChatGPT, and it has told me that apparently, I'm a dumb idiot who needs to go relearn how to do 1+1.
 If 1 pass gets the columns which need more birds one extra bird. Then I just need to find out how many birds needs to be transferred down... It's easy...
 
-
+Second part is incredibly slow, though I'm not sure how I would optimise it.
 
 Wow I did terribly today. I'm now 6th (̥ ̥এ́ ̼ এ̥̀)̥̥ . Well, I guess I just have to do even better tomorrow, I should probably do some Euler or AOC for some practice, or finish that Codyssi thing.
+
+# Day 12
+
+Quite an easy quest honestly, it's just flood fill and then counting the flood fill. Also, learning pythons set operators was <b>really</b> useful, and it made this thing a breeze to do.
+
+If you have the set ```{1, 2, 3, 4}``` and did ```{1, 2, 3, 4} - {1, 3, 5}``` you get  ```{2, 4}``` which is really useful when you need to get rid of all the barrels which have already been destroyed.
+
+Placing bets now, tomorrow will be Dijkstra.
