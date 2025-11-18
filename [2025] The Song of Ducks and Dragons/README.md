@@ -112,3 +112,30 @@ I only ever encountered one problem, and that was that I always assumed that the
 I never thought it would be chess, but hey. I have WAY too many functions, that I'm going to clean up. I did it all, I used caching to speed up the end. It all works... hooray.
 
 I feel as if there is a better method to do this rather than just brute forcing it, as it takes a minute or two to complete.
+
+# Day 11
+
+This is going quite well if my brain was actually functioning. For example, I just copied and pasted a line of code into the answer instead of my answer.
+
+I can smell an optimisation problem coming up...
+
+Okay, interestingly, part 3 already goes in ascending order and skips phase 1, so I actually just need to calculate how long phase 2 will go on for. So couldn't I just find the middle value they'll all get to
+and then see how long it would take until they all reach that point?
+
+Okay, I think it's something to do with the differences, I just don't know how. It's not in the differences, they look as if they follow a weird pattern until you look a bit closer and it just looks random...
+
+I'm just going to keep using random formulae until I get the right answer at this point. There has to be something between the maximum, minimum and the middle number. Quartiles maybe?
+
+I'm going to go out on a limb and say it's not standard deviation, or Variance, it's probably more to do with the sums of the numbers.
+
+It might be something to do with the bottom and top halves of the list, as while they move erratically, they all need to move a certain number of spaces eventually. Nevermind, that can't be true, as the top
+might be way out of whack compared to the bottom.
+
+Turns out, if you get rid of all the negative ones, it works! Why? I don't know.
+
+Okay, I just asked ChatGPT, and it has told me that apparently, I'm a dumb idiot who needs to go relearn how to do 1+1.
+If 1 pass gets the columns which need more birds one extra bird. Then I just need to find out how many birds needs to be transferred down... It's easy...
+
+
+
+Wow I did terribly today. I'm now 6th (̥ ̥এ́ ̼ এ̥̀)̥̥ . Well, I guess I just have to do even better tomorrow, I should probably do some Euler or AOC for some practice, or finish that Codyssi thing.
