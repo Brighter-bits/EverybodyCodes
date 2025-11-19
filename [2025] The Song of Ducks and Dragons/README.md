@@ -147,3 +147,8 @@ Quite an easy quest honestly, it's just flood fill and then counting the flood f
 If you have the set ```{1, 2, 3, 4}``` and did ```{1, 2, 3, 4} - {1, 3, 5}``` you get  ```{2, 4}``` which is really useful when you need to get rid of all the barrels which have already been destroyed.
 
 Placing bets now, tomorrow will be Dijkstra.
+
+# Day 13
+
+I was wrong, it was not Dijkstra. Unfortunately, as much as I would like to properly optimise my code, I have stuff to go and do. So it will have to stay inefficient for now. I would probably
+make a custom mod function, which keeps subtracting the distance between the two input numbers until it reaches a negative. Then do the initial number + the leftover to get the final number the dial would turn to.
