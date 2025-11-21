@@ -62,6 +62,5 @@ def Solve(part):
 
 
 
-Solve(1)
-Solve(2)
-Solve(3)
+for i in range(1, 4):
+    Solve(i)

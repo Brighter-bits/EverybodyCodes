@@ -34,8 +34,6 @@ def Solve(part):
         inp.extend(clockL[::-1])
         print(inp[2025%len(inp)] if part == 1 else (inp[20252025%len(inp)] if part == 2 else inp[202520252025%len(inp)]))
 
-
-Solve(1)
-Solve(2)
-Solve(3)
+for i in range(1, 4):
+    Solve(i)
         

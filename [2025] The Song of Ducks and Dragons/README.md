@@ -151,4 +151,23 @@ Placing bets now, tomorrow will be Dijkstra.
 # Day 13
 
 I was wrong, it was not Dijkstra. Unfortunately, as much as I would like to properly optimise my code, I have stuff to go and do. So it will have to stay inefficient for now. I would probably
-make a custom mod function, which keeps subtracting the distance between the two input numbers until it reaches a negative. Then do the initial number + the leftover to get the final number the dial would turn to.
+make a custom mod function, which keeps subtracting the distance between the two input numbers until it reaches a negative. Then do the initial number + the leftover to get the final number the dial would turn
+to.
+
+# Day 14
+
+I'm going to assume this pattern repeats at least some point right?
+
+I'M SUCH AN IDIOT! It was such an easy puzzle and everything.
+
+So, part 1 was quite easy, it was just setting up for part 2, which also ran incredibly quickly.
+
+Part 3 was strange, I very quickly found the loop in the differences, having not at all read the hint like the dumb dumb I am. I then was unable to add for a while as the extraction of the middle was a bit
+messed up.
+
+And I thought that would be it for my troubles. For some reason, my answer was always too short and thus I immediately blamed my cycle checker. So I had the checker ensure it wasn't a false positive by checking
+if the next number started another loop.
+
+Then I decided that instead of seeing we have just repeated the exact same loop once, I checked if it had looped twice. Still, my answer was order of magnitude off of the correct answer. Why?
+
+When the symbol shows up you are supposed to count every single active tile on the entire board, not just the ones inside the symbol. I spent an extra forty minutes on this error...
