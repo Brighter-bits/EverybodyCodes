@@ -171,3 +171,54 @@ if the next number started another loop.
 Then I decided that instead of seeing we have just repeated the exact same loop once, I checked if it had looped twice. Still, my answer was order of magnitude off of the correct answer. Why?
 
 When the symbol shows up you are supposed to count every single active tile on the entire board, not just the ones inside the symbol. I spent an extra forty minutes on this error...
+
+# Day 15
+
+Dijkstra, I'm calling it now.
+
+I was right, but I also can't code. Kept only reading the first number of the number of steps, which took me ages to spot. 
+Now I just have to optimise this.
+
+I don't even know+ why I use complex numbers at this point...
+
+Drawing out all the walls in part 3 is intractable, so you really just have to use bounds to check it, which doesn't bode well for later.
+
+I feel like the graph is way to big to do feasibly, so I can probably make this problem way shorter somehow, I can probably divide all of the distances by 7 or something.
+
+Looking at the previous graphs, there are a whole load of thin corridors.
+
+Okay, just had a brilliant idea. If I always wall hug, then it will be the same distance due to the Manhattan distance's rules. So if I only make nodes next to walls, it should be fine?
+
+Never mind, this also doesn't work as it's essentially just trying to draw all the walls again, but times 2.
+
+What about just the corners? If I'm being speedy I would hug them anyway and I'll be going in straight lines as mentioned previously.
+
+
+Alright, it's time to start searching stuff up...
+
+Okay. So turns out I had a couple of simple spelling errors which caused fun combinations of idiocy. Using a little bit of AId, it appears that you can't just look at all the corners, but instead find points of interest.
+
+This means that I can hopefully do
+
+```
+########E########
+#       ^       # 
+#       |       # 
+#       |       # 
+S------ |       #
+#################
+
+```
+
+Where you go upwards because the point shares a y coordinate with the End (or another wall in the actual code) and the point shares an x coordinate with the Start.
+My original code used only the diagonals of each wall and the cardinals of the Start and End. Meaning I would have had to loop around the edge.
+
+Even with AId I still get things wrong. So, apparently, having the coordinates being adjacent cuts down the number of coordinates you need to look through significantly.
+So I'm going to do that. I should probably get in the habit of ordering things when I first get them, instead of waiting and then having a billion min(a, b), max(a, b) everywhere.
+
+Never make me do that again.
+
+In other news. IT WAS DIJKSTRA, I CALLED IT! <p style="font-size: 8px">okay, I did say it was going to happen yesterday, but I'm a broken clock who's thinks it's going to be right twice a day, but then misses
+even that low bar.</p>
+
+Oh, I have only just realised this was Quest 15. Quest 15 last year (well, I actually did it a few months ago), absolutely destroyed me and had Dijkstra in it.
