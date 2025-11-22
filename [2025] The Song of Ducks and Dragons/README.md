@@ -185,7 +185,7 @@ Drawing out all the walls in part 3 is intractable, so you really just have to u
 
 I feel like the graph is way to big to do feasibly, so I can probably make this problem way shorter somehow, I can probably divide all of the distances by 7 or something.
 
-Looking at the previous graphs, there are a whole load of thin corridors.
+Looking at the previous graphs, there are a whole load of thin corridors. (In hindsight what was I thinking)
 
 Okay, just had a brilliant idea. If I always wall hug, then it will be the same distance due to the Manhattan distance's rules. So if I only make nodes next to walls, it should be fine?
 
@@ -193,10 +193,12 @@ Never mind, this also doesn't work as it's essentially just trying to draw all t
 
 What about just the corners? If I'm being speedy I would hug them anyway and I'll be going in straight lines as mentioned previously.
 
+___
+
 
 Alright, it's time to start searching stuff up...
 
-Okay. So turns out I had a couple of simple spelling errors which caused fun combinations of idiocy. Using a little bit of AId, it appears that you can't just look at all the corners, but instead find points of interest.
+Okay. So turns out I had a couple of simple spelling errors which caused fun combinations of idiocy. Using a little bit of AId, it appears that you can't just look at all the corners, but instead should find points of interest.
 
 This means that I can hopefully do
 
@@ -211,7 +213,28 @@ S------ |       #
 ```
 
 Where you go upwards because the point shares a y coordinate with the End (or another wall in the actual code) and the point shares an x coordinate with the Start.
+
+
 My original code used only the diagonals of each wall and the cardinals of the Start and End. Meaning I would have had to loop around the edge.
+
+```
+########E########
+#       ^<------|# 
+#               |# 
+#               |# 
+S-------------->|#
+#################
+
+or more likely
+
+########E########
+#|----->^        # 
+#|               # 
+#|               # 
+S|               #
+#################
+```
+
 
 Even with AId I still get things wrong. So, apparently, having the coordinates being adjacent cuts down the number of coordinates you need to look through significantly.
 So I'm going to do that. I should probably get in the habit of ordering things when I first get them, instead of waiting and then having a billion min(a, b), max(a, b) everywhere.
