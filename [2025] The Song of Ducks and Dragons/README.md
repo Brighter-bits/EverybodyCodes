@@ -245,3 +245,31 @@ In other news. IT WAS DIJKSTRA, I CALLED IT! <p style="font-size: 8px">okay, I d
 even that low bar.</p>
 
 Oh, I have only just realised this was Quest 15. Quest 15 last year (well, I actually did it a few months ago), absolutely destroyed me and had Dijkstra in it.
+
+# Quest 16
+
+This is the worst dev environment I have ever had to work with, it's small cramped and horrible. I need to finish setting up a proper environment on my new system.
+
+Other than that, I don't even know how I got the last answer, I just decided to keep jumping and guessing until it worked.
+
+# Quest 17
+
+I want to explode, why is this so hard???
+
+Every part of this kicked my butt, The first part was simple enough, it's just a for loop and a formula, but I kept switching between two methods of doing it, which certainly didn't help
+
+The second was a pain because due to how circles work, it's not just a normal flood fill. I also had the problem of NOT READING THE QUESTION and thus causing me to not realise I stop once you hit the edges. So I set up loads of edge cases to ensure that I would correctly count the squares even if it reached the boundary. Which wasted time.
+
+Now the third part I've had to have a long, hard think about, but thanks to the line of nines in the input, I had an idea.
+
+I need to create a loop, thus the line must go through the middle line below the Volcano, as such take every single shortest distance between the start the middle line.
+
+From there, for each part of the middle line we managed to get to, we check whether the line comes from the left or the right, we then temporarily put a river of "lava" on the side of the middle line we came from.
+
+This forces the line to go around the other side and thus complete the loop.
+
+It's still not working however, for some reason it works for two inputs, but generates an extra shorter path for the third input. Why? I don't know, but it's also messing up the proper puzzle input.
+
+So, I may have found my problem. Sometimes, it's probably easier to double back to the left, before then swerving to the right and then returning to the start. My line was a bit too close so the program wouldn't like it.
+
+FINALLY! I see I found the error it was the line thing above, strangely, it always seems to be the second answer which works, not the first. This is a very large error, but I have to wake up tomorrow, and it's stupid o'clock again, so it's a bug I will fix later (translation: Never).
