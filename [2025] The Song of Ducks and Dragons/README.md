@@ -273,3 +273,10 @@ It's still not working however, for some reason it works for two inputs, but gen
 So, I may have found my problem. Sometimes, it's probably easier to double back to the left, before then swerving to the right and then returning to the start. My line was a bit too close so the program wouldn't like it.
 
 FINALLY! I see I found the error it was the line thing above, strangely, it always seems to be the second answer which works, not the first. This is a very large error, but I have to wake up tomorrow, and it's stupid o'clock again, so it's a bug I will fix later (translation: Never).
+
+# Quest 18
+
+Thank goodness it was a good one for me today. I really enjoyed this puzzle actually (maybe because it wasn't graph traversal).
+
+There's not much to say about it, other than for the final part, I had a sequence that only activated one free branch and then did the usual checking energy, but I didn't stop the energy if it was less than the thickness.
+This showed me how each free branch contributed to the overall final score, you then take this and set all the positive values to 1 and negative values to 0, this gives you the perfect sequence.
