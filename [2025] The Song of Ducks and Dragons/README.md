@@ -280,3 +280,18 @@ Thank goodness it was a good one for me today. I really enjoyed this puzzle actu
 
 There's not much to say about it, other than for the final part, I had a sequence that only activated one free branch and then did the usual checking energy, but I didn't stop the energy if it was less than the thickness.
 This showed me how each free branch contributed to the overall final score, you then take this and set all the positive values to 1 and negative values to 0, this gives you the perfect sequence.
+
+# Quest 19
+
+This isn't going to go well.
+
+It isn't going well, my current program is working for part 1, but I can already spot so many logical errors I doubt it will hold up for part 2.
+
+
+The first thing I did was try and simplify the calculation for the distance. This wasn't too hard, the problem is that I'm not taking into account any future pipes. Pretty sure this is called being greedy.
+
+However, I think I can get through this. None of my calculations are going well it's not something to do with the recursion or the cache so I'm stumped, I'm going to have a peek at the solutions thread for a couple hints.
+
+Turns out I had three off-by-one errors (one of them was technically a multiply by two error), but part 3... I'm being tortured.
+
+Through a hope and a prayer and killing off hundreds of possible answers, I did it. I'm not proud of my solution, nor that I checked the solution thread twice. But I feel I did okay.
