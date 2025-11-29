@@ -295,3 +295,15 @@ However, I think I can get through this. None of my calculations are going well 
 Turns out I had three off-by-one errors (one of them was technically a multiply by two error), but part 3... I'm being tortured.
 
 Through a hope and a prayer and killing off hundreds of possible answers, I did it. I'm not proud of my solution, nor that I checked the solution thread twice. But I feel I did okay.
+
+# Quest 20
+
+It seemed simple enough at the start, and then part 3 happened.
+
+I spent ages trying to rotate the triangle, by firstly having the left side go to the right, then the right side go to the top, then the right to the top. Unfortunately, they often interfered with each other, and it took me a while to realise that I could just use one of them and just loop the program through a few more times.
+
+Then I didn't realise I could jump in place, which slowed me down again, but I got the right anwer in the end.
+
+Interestingly, I came join 53rd by points alongside 219586 (the person not the number), but I will childishly proclaim that I came 30th by time and apparently I cam 52nd if you discount everyone who put it all through AI.
+
+But it's over now, it's done, I can have a sleep schedule again, because I'm not waking up early for AOC.
