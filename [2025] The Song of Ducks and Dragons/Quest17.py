@@ -219,16 +219,16 @@ def Solve(part):
                             tempBanned.add((Cx+3, Cy+i))
                         SecondPart.append((attempt[0], Dijkstra(attempt[0], Start, JoinSet(DeadPlaces[:rounds] + [tempBanned]), ((rounds+1)*30) - attempt[1][0], inp)))
                     
-                    if rounds == 9 and attempt[0] == (15, 25):
-                        for x in range(len(gridd[0])):
-                            for y in range(len(gridd)):
-                                if (x, y) in attempt[1][1] or (x, y) in SecondPart[0][1][1]:
-                                    if gridd[y][x] == ".":
-                                        gridd[y][x] = "%"
-                                    else:
-                                        gridd[y][x] = "*"
-                        for i in gridd:
-                            print(i)
+                    # if rounds == 9 and attempt[0] == (15, 25):
+                    #     for x in range(len(gridd[0])):
+                    #         for y in range(len(gridd)):
+                    #             if (x, y) in attempt[1][1] or (x, y) in SecondPart[0][1][1]:
+                    #                 if gridd[y][x] == ".":
+                    #                     gridd[y][x] = "%"
+                    #                 else:
+                    #                     gridd[y][x] = "*"
+                    #     for i in gridd:
+                    #         print(i)
 
                 SecondPart = [attempt for attempt in SecondPart if attempt[1][0] != float("inf")]
                 if len(SecondPart) > 0:
@@ -243,6 +243,6 @@ def Solve(part):
                         
 
 for i in range(1, 4):
-    print(Solve(i))
+    Solve(i)
 
 
