@@ -243,7 +243,14 @@ def InOrder2(CNode:Node): # Same as previously, just now taking into account the
     if len(CNode.rightSocket) > 2:
         InOrder2(CNode.rightSocket[2])
 
+def SongOutput(CNode:Node): # I can't believe it took checking my answer with someone else's code to realise that the Data part is in fact important. Oh... it's just the default song.
+    if len(CNode.leftSocket) > 2:
+        SongOutput(CNode.leftSocket[2])
 
+    outputList.append(CNode.data)
+
+    if len(CNode.rightSocket) > 2:
+        SongOutput(CNode.rightSocket[2])
 
 
 
@@ -269,24 +276,29 @@ def Solve(part):
                 newNode = BranchSearch3(NodeList[i], CNode)
                 while newNode != None:
                     newNode = BranchSearch3(newNode, CNode)
-                
+                         
 
         outputList = []
         if part <= 2:
             InOrder(CNode)
-        else:
+        elif part == 3:
             InOrder2(CNode)
+        else:
+            SongOutput(CNode)
+            open("SongOutput.txt", "w").write("\n".join(outputList))
         total = 0
-        for i in range(len(outputList)):
-            total += (i+1)*int(outputList[i])
-        print(total)
+        if part != 4:
+            for i in range(len(outputList)):
+                total += (i+1)*int(outputList[i])
+            print(total)
         
         
+    
 
 
 
-
-Solve(1)
+Solve(1) # Actual Part one and two
 Solve(2)
+
 Solve(3)
 Solve(4)
