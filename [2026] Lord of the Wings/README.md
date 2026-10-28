@@ -27,3 +27,16 @@ However, this wouldn't always work, as sometimes, the baggage would be applied f
 Not too proud of this one.
 
 Looking at other solutions, the best solutions seem to be using graph theory... Which sort of makes sense? Kahn's algorithm for sorting seems to make the most sense to me.
+
+# Quest 3
+
+This one was quite fun.
+
+Most of my time loss was due to silly mistakes, and also having a working solution 9 edits back, but I kept thinking it was wrong because I was still using the example input.
+
+Part one was quite simple, it was just two lists and then working on the both of them.
+Part two I just turned the bases into a cycle that could be reused.
+Part three I finally put the computation into its own function.
+
+One of the first things I did was reverse all the lists so that my for loop which would add in the powers worked upwards rather than downwards. This, like most of my ideas, only added in further complexity down the road. I need to learn to try and not edit the input too much, or else I paint myself into an inflexible corner.
+
