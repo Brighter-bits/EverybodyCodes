@@ -40,3 +40,13 @@ Part three I finally put the computation into its own function.
 
 One of the first things I did was reverse all the lists so that my for loop which would add in the powers worked upwards rather than downwards. This, like most of my ideas, only added in further complexity down the road. I need to learn to try and not edit the input too much, or else I paint myself into an inflexible corner.
 
+# Quest 4
+
+At first, this looked not too bad. Part 1 is the kind of thing I'm used to, calculate the value, then sort and multiply.
+
+Part 2 was a bit more interesting, and very helpfully "python sort by two keys one reverse" is a common google search.
+
+It was Part 3 that made me realise this was a very meta quest (no, not the VR headset), twenty quests split up into three parts with a scoring system that decreases by one for each solve.
+This was pretty cool, except for the fact, that there was a little green box which gave an extra example. Something awful was going to happen next.
+
+I eventually managed to complete it though. There wasn't really anything too novel in the code, except for the tieing mechanic, but even then, that's not very interesting.
