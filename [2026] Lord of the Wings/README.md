@@ -50,3 +50,11 @@ It was Part 3 that made me realise this was a very meta quest (no, not the VR he
 This was pretty cool, except for the fact, that there was a little green box which gave an extra example. Something awful was going to happen next.
 
 I eventually managed to complete it though. There wasn't really anything too novel in the code, except for the tieing mechanic, but even then, that's not very interesting.
+
+# Quest 5
+
+I don't know why, but my first instinct was to make a Flood Fill. I then promptly ignored this to try and do passes of a window of values. Then went back to flood fill when I realised it would be way easier.
+
+I honestly thought I would be using the Flood Fill for more than just the very first part, but it didn't seem to be so.
+
+I actually liked how this puzzle built upon itself, though I'm a bit annoyed on how the final part doesn't like it if I start in the central square.
