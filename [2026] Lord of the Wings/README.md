@@ -38,7 +38,7 @@ Part one was quite simple, it was just two lists and then working on the both of
 Part two I just turned the bases into a cycle that could be reused.
 Part three I finally put the computation into its own function.
 
-One of the first things I did was reverse all the lists so that my for loop which would add in the powers worked upwards rather than downwards. This, like most of my ideas, only added in further complexity down the road. I need to learn to try and not edit the input too much, or else I paint myself into an inflexible corner.
+One of the first things I did was reverse all the lists so that my for-loop which would add in the powers worked upwards rather than downwards. This, like most of my ideas, only added in further complexity down the road. I need to learn to try and not edit the input too much, or else I paint myself into an inflexible corner.
 
 # Quest 4
 
@@ -58,3 +58,14 @@ I don't know why, but my first instinct was to make a Flood Fill. I then promptl
 I honestly thought I would be using the Flood Fill for more than just the very first part, but it didn't seem to be so.
 
 I actually liked how this puzzle built upon itself, though I'm a bit annoyed on how the final part doesn't like it if I start in the central square.
+
+# Quest 6
+
+Okay, this was quite a fun one, which I did try to optimise too early, and completely misread the problem.
+I didn't realise that the ingredients would loop, and I thought I only wanted the base ingredients so I just set up a simple search that would return 1 once it got to the bottommost ingredient.
+This was completely incorrect and I wasted about 10 minutes coding it, afterwards it got a bit more straightforward.
+
+The second part simply required me to run the Check function over every recipe, and returning True if there was a NULL.
+
+Now, I'm quite proud of my third part. Rather than using a tuple of True's and False's, I realised that it would be best to use some binary to keep track of my NULLs. Each bit is a type of NULL, with 1 being present and 0 being missing.
+From there I simply used the Bitwise OR operator, so that if a new NULL type was found, it would be merged into the running total and nothing would be overwritten. Then it was a simple case of checking if the binary number was equal to three or greater than 4, in which case, we had more than one NULL and could add 1 to the total.
