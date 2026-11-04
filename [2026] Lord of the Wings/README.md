@@ -69,3 +69,17 @@ The second part simply required me to run the Check function over every recipe, 
 
 Now, I'm quite proud of my third part. Rather than using a tuple of True's and False's, I realised that it would be best to use some binary to keep track of my NULLs. Each bit is a type of NULL, with 1 being present and 0 being missing.
 From there I simply used the Bitwise OR operator, so that if a new NULL type was found, it would be merged into the running total and nothing would be overwritten. Then it was a simple case of checking if the binary number was equal to three or greater than 4, in which case, we had more than one NULL and could add 1 to the total.
+
+# Quest 7
+
+This one was quite enjoyable. I initially went for a recursive solution, but then transferred over to using Counters (my beloved).
+
+I did unfortunately, blunder quite horribly and spent at least half an hour trying to figure out why Counter.update was not updating the NextStageClouds Counter.
+
+The Part 3 solution is the only interesting bit:
+
+I set it up so that there were two phases, in the first phase, energy would be added up and explosions would occur. All of the impulses created by the explosion is stored in a list. Then in the second phase, we calculate all of the impulses that will occur in the next Stage.
+
+We then add any clouds that have exploded to the ban list, and then begin the next Stage with the impulses we calculated last time.
+
+I did like how I counted these impulses though. I used a Counter which had a composite key of the Cloud's id and the impulse's strength. That way, if I had a cloud which had 10 impulses with a strength of two, rather than try and calculate them all one by one, I just multiply everything by 10.
