@@ -83,3 +83,16 @@ I set it up so that there were two phases, in the first phase, energy would be a
 We then add any clouds that have exploded to the ban list, and then begin the next Stage with the impulses we calculated last time.
 
 I did like how I counted these impulses though. I used a Counter which had a composite key of the Cloud's id and the impulse's strength. That way, if I had a cloud which had 10 impulses with a strength of two, rather than try and calculate them all one by one, I just multiply everything by 10.
+
+# Quest 8
+
+Just by reading the description, I knew I was in for a doozy. I hate geometry, there is nothing I despise more than shapes, and this puzzle is quite obviously shape related.
+
+My first idea was to flatten the hexagon down into a nice square that I could split into lines, though with the wording of Part 1, I knew I was going to have to be ready to edit it. In the end, I just copy-pasted the function four times. Though hopefully I've cleaned it up to be a bit nicer now.
+
+For part 2, I misread the puzzle, as I always do, and thought that it wanted the number of unique ents which received energy. That was not the case, but it would be quite useful in the next part.
+
+This part wasn't as bad, though I did spend a while thinking I wanted the number of rounds. This definitely isn't my best work, and the code is probably going to remain messy, just like this description.
+
+
+
