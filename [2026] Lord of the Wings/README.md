@@ -8,7 +8,7 @@ Part 1 was find the next square.
 Part 2 was find the next multiple of four.
 Part 3 was find the next odd square - 1.
 
-I'm going to make my code a bit prettier (I ***will*** comment my code this year). I'll also do the writeup of the digital atelier while I'm at it.
+I'm going to make my code a bit prettier (I ***will*** comment my code this year). I'll also do the write-up of the digital atelier while I'm at it.
 
 # Quest 2
 
@@ -49,7 +49,7 @@ Part 2 was a bit more interesting, and very helpfully "python sort by two keys o
 It was Part 3 that made me realise this was a very meta quest (no, not the VR headset), twenty quests split up into three parts with a scoring system that decreases by one for each solve.
 This was pretty cool, except for the fact, that there was a little green box which gave an extra example. Something awful was going to happen next.
 
-I eventually managed to complete it though. There wasn't really anything too novel in the code, except for the tieing mechanic, but even then, that's not very interesting.
+I eventually managed to complete it though. There wasn't really anything too novel in the code, except for the tying mechanic, but even then, that's not very interesting.
 
 # Quest 5
 
@@ -94,5 +94,48 @@ For part 2, I misread the puzzle, as I always do, and thought that it wanted the
 
 This part wasn't as bad, though I did spend a while thinking I wanted the number of rounds. This definitely isn't my best work, and the code is probably going to remain messy, just like this description.
 
+# Quest 9
+
+This wasn't even a hard quest, and I absolutely butchered it. I immediately knew this would be a Counter problem from the start, it just had that vibe. I knew that I would need to keep track of the number of branches, and then split the branches.
+
+My first mistake was my usual fatal flaw of not reading, and then misunderstanding what I needed to do. This was mostly due to how I thought that I had to split the top half evenly. For example, if I had a growth of 7, then I would have to split it like so:
+
+```
+ \   /
+  \ /
+   +
+   |
+   |
+   |
+```
+
+I got very confused as to how I would know whether to add one to the bottom "trunk" or the upper branch. I eventually realised that the second branch always had a length of one, and from there it wasn't so bad.
+
+Part 2 was perfectly fine to be honest, and for Part 3 I successfully predicted that it would just be "more trees, go do it again". I hoped just adding a cached function would help, but I eventually realised that the for loop over my counter was my real issue.
+
+And so I did the obvious thing and rather than doing every single individual loop, I would skip to the next time a growth split happened.
+
+I then spent an entire hour because my increment of the total value was indented slightly incorrectly...
+
+Suffice to say, this was a perfect puzzle for me, if only I were less stupid.
+
+# Quest 10 
+
+I'm writing this the day I completed quest 11, I completely forgot to write this part.
+
+Overall, I think I overcomplicated this quest, especially my loop, which I don't even remember how I fixed. I do know how my code works though, so I have commented it.
 
 
+# Quest 11
+
+Okay, so I did predict this earlier, but due to the fact I didn't commit this earlier I guess I can't claim it.
+
+So essentially, every week seems to be focused on a different theme. I felt this a bit in 2024 too. Last week was about Dynamic Programming, and skipping parts of loops and making up the difference.
+
+This week though, I predict is going to be full of Dijkstra and A*.
+
+Unfortunately, I didn't have any time over the weekend to go over Dijkstra, so I sort of fumbled about for the first part of the puzzle.
+For Part 2 I just iterated through every single possible new connection.
+Part 3 was much more interesting, though only because I had to think about how to actually learn how to make unique pairings, then realised that it wasn't that bad.
+
+Good fun puzzle.

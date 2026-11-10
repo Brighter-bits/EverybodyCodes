@@ -4,13 +4,13 @@ from copy import deepcopy
 os.chdir(Path(__file__).parent)
 Parts = ["everybody_codes_e2026_q08_p1.txt", "everybody_codes_e2026_q08_p2.txt", "everybody_codes_e2026_q08_p3.txt"]
 
-class Coord():
+class Coord(): # A coordinate class.
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
 
-def FlattenSE(grid): 
+def FlattenSE(grid): # This takes the hexagonal grid, and condenses it to a rectangular grid.
     pointer = Coord(0, 0)
     while grid[pointer.y][pointer.x] == ".":
         pointer.y += 1
@@ -194,13 +194,11 @@ def Solve(part):
     with open(Parts[part-1]) as f:
         inp = list(map(lambda x: list(x.replace("\n", "")), f.readlines()))
         if part == 1:
-            # SquareGrid = FlattenSE(inp)
-            # SquareGrid = list(map(lambda x: list(map(int, x)), SquareGrid))
-            # total = 0
-            # for line in SquareGrid:
-            #     total += ShadowCheck(line)
-            # print(total)
-            pass
+            SquareGrid = FlattenSE(inp)
+            illuminated = []
+            for line in SquareGrid:
+                illuminated.extend(list(ShadowCheck(line)))
+            print(len(illuminated))
         elif part == 2:
             illuminated = []
             for line in FlattenE(inp):
