@@ -139,3 +139,15 @@ For Part 2 I just iterated through every single possible new connection.
 Part 3 was much more interesting, though only because I had to think about how to actually learn how to make unique pairings, then realised that it wasn't that bad.
 
 Good fun puzzle.
+
+# Quest 12
+
+This one was quite interesting. I personally found it quite tough, and judging by my placement, it seems everyone else did as well.
+
+The first thing I tried was to create a custom class that would hold the coordinates of the top-left and bottom-left corners of each block. This worked fine for the first part, but I quickly got stumped on part 2. I did start coding something to take into account each side-length and then try and split the block into two smaller blocks, but then I stopped doing that and had a think.
+
+I eventually decided to gamble on if a greedy algorithm would do the trick, and surprisingly it did. Firstly a flood fill to find all the coordinates of each block, then finding every single possible spell and then choosing the one which leaves the smallest number of coordinates left worked really well.
+
+After this for Part 3, I implemented two more functions which find which coordinates are valid taking into account any holes, then using the set intersect to make sure that the spell doesn't cross any gaps.
+
+I would also like to tack onto my previous prediction flood fill, really I just predict that this week will be more about 2D grids. But maybe I'm just hallucinating links and patterns in my head.
