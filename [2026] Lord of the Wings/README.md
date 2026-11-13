@@ -151,3 +151,21 @@ I eventually decided to gamble on if a greedy algorithm would do the trick, and 
 After this for Part 3, I implemented two more functions which find which coordinates are valid taking into account any holes, then using the set intersect to make sure that the spell doesn't cross any gaps.
 
 I would also like to tack onto my previous prediction flood fill, really I just predict that this week will be more about 2D grids. But maybe I'm just hallucinating links and patterns in my head.
+
+# Quest 13
+
+Lessons to Learn: Use Google to find niche algorithms rather than trying to do 8 bajillion edge cases; Include everything in the hash, even stuff that you think is already covered.
+
+Ohhh I hated this puzzle. Oh I hated it. This week has not been fun and I am dreading the next. (I am having fun though, sort of...).
+
+At first, I tried doing weird edge cases, but that kept failing. Luckily, stack overflow helped, unluckily, the AI overview spoiled it for me first. Thinking about it, the gap stuff does make complete sense, so it's not some crazy algorithm I need to remember.
+
+This one was tough, and honestly I wouldn't have been able to do it without the test data in Part 2, which I got access to because I got lucky guessing the answer to Part 1 =D.
+
+# Quest 14
+
+I'm so annoyed with myself!
+
+I quickly understood that this was a graph traversal problem, and that you could essentially model this as a graph with the frame at its centre. The only problem was that I thought of Prim's algorithm, went back to read it on Wikipedia from my old README. And then decided that Prim's wasn't the answer, but instead some sort of modified Dijkstra would do the trick.
+
+It was a Prim's algorithm puzzle.
