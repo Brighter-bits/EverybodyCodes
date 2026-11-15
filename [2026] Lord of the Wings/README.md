@@ -169,3 +169,17 @@ I'm so annoyed with myself!
 I quickly understood that this was a graph traversal problem, and that you could essentially model this as a graph with the frame at its centre. The only problem was that I thought of Prim's algorithm, went back to read it on Wikipedia from my old README. And then decided that Prim's wasn't the answer, but instead some sort of modified Dijkstra would do the trick.
 
 It was a Prim's algorithm puzzle.
+
+# Quest 15
+
+As soon as I saw this puzzle, I had a flashback. Gathering herbs in Quest 15 2024 was a 2D grid where you had to collect items and then get from the start to the end. Gathering sulphur in Quest 15 2026 was a 2D grid where you had to collect items and then get from the start to the end.
+
+So the first thing I did was a flood fill on the entire map, and Dijkstra'd every point. What I had not realised was that turning does not take a second, and you cannot turn around in place.
+
+I eventually realised that Dijkstra was not a good idea. I eventually decided to gamble on the hope that the layout of the mines wouldn't change. I went along the centre line, eventually calculating every loop, and turning the map into a 2D line, where you can move left and right between points, and some points allow you to teleport to other points, where teleporting gives you an amount of sulphur.
+
+From there things were still tricky, but I eventually decided it was best to use memoisation for this, and that got me the first two. I don't remember much of it to be honest, but the code I'm pushing is a lot neater than it was at the time I submitted Part 3.
+
+Part 3 was interesting because I distinctly remember looking at the puzzle input and going: "If the first part of the loop is sulphur, the feelers won't go down it." and then completely forgetting about that until an hour later. And even better, I kept thinking I was getting the puzzle completely wrong, because I was using the test input and hadn't realised it.
+
+The trick with Part 3 was to realise that there was probably an optimal loop that the cart would just keep going round and round in. So all you need to do is find that loop, then calculate it rather than doing it by brute force.
