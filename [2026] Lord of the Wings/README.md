@@ -183,3 +183,19 @@ From there things were still tricky, but I eventually decided it was best to use
 Part 3 was interesting because I distinctly remember looking at the puzzle input and going: "If the first part of the loop is sulphur, the feelers won't go down it." and then completely forgetting about that until an hour later. And even better, I kept thinking I was getting the puzzle completely wrong, because I was using the test input and hadn't realised it.
 
 The trick with Part 3 was to realise that there was probably an optimal loop that the cart would just keep going round and round in. So all you need to do is find that loop, then calculate it rather than doing it by brute force.
+
+# Quest 16
+
+Now this was an interesting puzzle. I looked at it and immediately thought Deques were going to come in handy, so I imported them and then didn't use them at all for part 1.
+
+With part one I just did the simple method of finding the sublist we swap, and then reversing it and reinserting it.
+
+With Part 2 however, I realised this felt close to that problem where you sort things using two pointers, or something close to that one bit in quicksort. I did do some searching and came across pancake sort, but that is something completely different. Essentially, every time you swap you leave behind some books that won't be sorted until a new colour is chosen, and we can abuse this to more quickly calculate the final state of our shelf.
+
+First I started with two pointers going inwards, then I realised I could just find the index of all of the Colour we're looking for, and then take sublists from there.
+
+It was however, very slow, and then I remembered that at the very beginning, I had gone and imported Deques, so I used that, and that heavily sped up my code. I was now getting the correct sorting done, the only problem was that I had no way to count it.
+
+I eventually realised that the first section I had would never be swapped, the next one would be swapped once, the next one twice and so on. Then I just needed to find how large the group of the currentColour I was swapping was, and adding that on, and I got the answer. For some reason it doesn't work with Part 2? I put my answer to Part 3 in on a whim and was surprised that it was right when the part 2 was wrong. But anyway, I've completed the puzzle, and now I can start commenting my code, then go to sleep.
+
+Is it efficient? No. Is it performant? No. Did it get the right answer? Yes.

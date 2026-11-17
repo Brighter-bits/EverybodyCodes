@@ -3,7 +3,6 @@ from pathlib import Path
 import sys
 from collections import defaultdict
 from functools import cache
-import sys
 
 sys.setrecursionlimit(1000000000)
 os.chdir(Path(__file__).parent)
