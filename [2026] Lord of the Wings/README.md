@@ -233,3 +233,18 @@ For part 2 I just appended the line to the list multiple times, and then added a
 Part 3 wasn't difficult either. I had it so that the large widths were simply set as an integer. Then when my code found the integer, it would multiply the stack's height by the length, and then just keep going.
 
 I'm liking how relaxed it's been these last two days. My sleep has not been going well for the previous couple puzzles.
+
+# Quest 19
+
+.... Well that was easy? Why wasn't that in the first week? (I'm laughing now, I'm dreading what diabolical puzzle has been cooked up for tomorrow.)
+
+Firstly the 2D grid format isn't very important, we can flatten the two grids into two lines.
+
+Then, we simply iterate over them, applying the rule and counting using a Counter object.
+
+That's the entirety of Part 1.
+Part 2 I simply got every single possible method, tried them all and then got the total.
+Part 3 was actually incredibly easy. In order to get the highest number, you want your three numbers to be as close as possible to each other. I was very lucky in that my K was the smallest group, meaning I could just completely ignore it.
+I took the three numbers, found their mean, turned that into an even distribution of integers, multiplied them all together, and managed to come 11th. Which is pretty good in my opinion.
+
+Since I didn't do part 3 correctly, I've just bashed out some code which essentially does what I've said above, but probably isn't foolproof.
