@@ -23,7 +23,7 @@ def Flood(inp, x, y): # A simple floodfill algorithm that returns all the coordi
         coords.extend(Flood(inp, x-1, y))
     if y + 1 < len(inp) and inp[y+1][x] == "#":
         coords.extend(Flood(inp, x, y+1))
-    if  y - 1 > 0 and inp[y-1][x] == "#":
+    if  y - 1 >= 0 and inp[y-1][x] == "#":
         coords.extend(Flood(inp, x, y-1))
 
     return coords + [(x, y)]

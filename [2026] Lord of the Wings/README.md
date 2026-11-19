@@ -176,7 +176,7 @@ As soon as I saw this puzzle, I had a flashback. Gathering herbs in Quest 15 202
 
 So the first thing I did was a flood fill on the entire map, and Dijkstra'd every point. What I had not realised was that turning does not take a second, and you cannot turn around in place.
 
-I eventually realised that Dijkstra was not a good idea. I eventually decided to gamble on the hope that the layout of the mines wouldn't change. I went along the centre line, eventually calculating every loop, and turning the map into a 2D line, where you can move left and right between points, and some points allow you to teleport to other points, where teleporting gives you an amount of sulphur.
+I eventually realised that Dijkstra was not a good idea. I then had the idea to gamble on the hope that the layout of the mines wouldn't change. I went along the centre line, eventually calculating every loop, and turning the map into a 2D line, where you can move left and right between points, and some points allow you to teleport to other points, where teleporting gives you an amount of sulphur.
 
 From there things were still tricky, but I eventually decided it was best to use memoisation for this, and that got me the first two. I don't remember much of it to be honest, but the code I'm pushing is a lot neater than it was at the time I submitted Part 3.
 
@@ -199,3 +199,37 @@ It was however, very slow, and then I remembered that at the very beginning, I h
 I eventually realised that the first section I had would never be swapped, the next one would be swapped once, the next one twice and so on. Then I just needed to find how large the group of the currentColour I was swapping was, and adding that on, and I got the answer. For some reason it doesn't work with Part 2? I put my answer to Part 3 in on a whim and was surprised that it was right when the part 2 was wrong. But anyway, I've completed the puzzle, and now I can start commenting my code, then go to sleep.
 
 Is it efficient? No. Is it performant? No. Did it get the right answer? Yes.
+
+# Quest 17
+
+My goodness I'm an idiot.
+
+I jumped around a bunch of ideas for this puzzle, mostly because I've been rather tired.
+
+The first thing I did was copy and paste some old code, and then spent 20 minutes to eventually find I had an old bug where I had a > rather than a >=. For some reason, I feel as if I've done this before; because I definitely have.
+
+So Part 1 was just Dijkstra and FloodFill
+Part 2 I was going to find every single edge and then traverse them. Then I realised I could just count all the edges I had without traversing them.
+Part 3 I tried to connect them all up, and this created some problems with chequerboard patterns like this:
+```
+#.
+.#
+```
+So instead, I inverted how I created the lines. I instead went along the edge, found every single gap, and then followed it as far as it went. 
+
+# Quest 18
+
+Thank god I'm not going to pull a late one.
+
+For some reason, the last two puzzles have been strangely easy. I did spend a long time on Quest 18, but it was relatively simple in my opinion.
+
+This puzzle was much nicer.
+
+Before part 1, I already knew that implementing this by actually drawing out wasn't going to work, as the puzzle was eventually going to get too large (and how right I was).
+
+It was relatively simple to make the logic for connecting stacks. I accidentally set it up so that only the highest stack would be able to roll over (continue above another stack), but I easily fixed that by just turning it into a list.
+
+For part 2 I just appended the line to the list multiple times, and then added a buffer that would make sure that the distance between the next stack and the current one wasn't too large.
+Part 3 wasn't difficult either. I had it so that the large widths were simply set as an integer. Then when my code found the integer, it would multiply the stack's height by the length, and then just keep going.
+
+I'm liking how relaxed it's been these last two days. My sleep has not been going well for the previous couple puzzles.
