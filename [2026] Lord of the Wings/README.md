@@ -248,3 +248,17 @@ Part 3 was actually incredibly easy. In order to get the highest number, you wan
 I took the three numbers, found their mean, turned that into an even distribution of integers, multiplied them all together, and managed to come 11th. Which is pretty good in my opinion.
 
 Since I didn't do part 3 correctly, I've just bashed out some code which essentially does what I've said above, but probably isn't foolproof.
+
+# Quest 20
+
+Another easy one? I really thought that this was going to be a stress inducing all-nighter for the final challenge. But it wasn't. It was a nice simple puzzle.
+
+For Part 1, I made a dictionary which converted symbols to the amount of segments they take to create. The actual equation part was relatively easy.
+For Part 2, Python has a built in way to convert strings in different bases to base 10; the only difficult bit was converting from base 10 to base 11 for the answer. And that wasn't really all that bad either.
+For Part 3, I already had a dictionary, so I decided to make three more of them. One for taking away a segment, one for giving a segment, and one for rearranging a segment within a single symbol. In the end, the solution worked really well.
+
+And that's the end of another year. I was hoping to get some rest after AoC, but GridOS is now happening straight after. Which annoys me a bit, I'm not too tired really, but I always want to compete.
+
+Making predictions now, next year I think Ascalgar is going to be the main character, possibly travelling with the egg. This year's story quite nicely leads into 2025, and 2025 was loosely connected to 2024. So what comes next?
+
+I guess I'll find out next year.
